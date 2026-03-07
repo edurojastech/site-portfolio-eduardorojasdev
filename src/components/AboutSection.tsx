@@ -1,0 +1,64 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Code2, Palette, Zap } from "lucide-react";
+
+const AboutSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const cards = [
+    { icon: Code2, title: "Código Limpo", desc: "Escrevo código escalável, semântico e bem estruturado seguindo as melhores práticas." },
+    { icon: Palette, title: "Design Moderno", desc: "Interfaces atraentes e intuitivas com foco em UX e identidade visual consistente." },
+    { icon: Zap, title: "Performance", desc: "Aplicações rápidas e otimizadas, com foco em Core Web Vitals e acessibilidade." },
+  ];
+
+  return (
+    <section id="about" className="py-32 px-6 relative z-10">
+      <div className="max-w-6xl mx-auto" ref={ref}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="font-mono-code text-primary text-sm">// sobre mim</span>
+          <h2 className="text-3xl md:text-5xl font-bold mt-2">
+            Quem sou <span className="text-gradient">eu</span>
+          </h2>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-muted-foreground text-center max-w-3xl mx-auto text-lg mb-16 leading-relaxed"
+        >
+          Sou um desenvolvedor frontend com experiência em criar interfaces modernas e responsivas.
+          Trabalho com as tecnologias mais recentes do ecossistema web para entregar produtos 
+          de alta qualidade que fazem a diferença na experiência do usuário.
+        </motion.p>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {cards.map((card, i) => (
+            <motion.div
+              key={card.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
+              className="group p-8 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500 hover:glow-primary"
+            >
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                <card.icon className="text-primary" size={24} />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">{card.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">{card.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutSection;
