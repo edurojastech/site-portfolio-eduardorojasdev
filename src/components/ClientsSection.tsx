@@ -3,13 +3,13 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Briefcase } from "lucide-react";
 
-import nagroLogo from "@/assets/clients/nagro.png";
-import startWgsnLogo from "@/assets/clients/start-wgsn.png";
+import nagroLogo from "@/assets/clients/nagro.webp";
+import startWgsnLogo from "@/assets/clients/start-wgsn.svg";
 import teclatLogo from "@/assets/clients/teclat.webp";
-import woliLogo from "@/assets/clients/woli.png";
-import wisebyteLogo from "@/assets/clients/wisebyte.png";
-import dulinoLogo from "@/assets/clients/dulino.png";
-import gorillasLogo from "@/assets/clients/gorillas-group.png";
+import woliLogo from "@/assets/clients/woli.svg";
+import wisebyteLogo from "@/assets/clients/wisebyte.svg";
+import dulinoLogo from "@/assets/clients/dulino.svg";
+import gorillasLogo from "@/assets/clients/gorillas.png";
 
 const clients = [
   { name: "Nagro", logo: nagroLogo },
@@ -70,7 +70,9 @@ const ClientsSection = () => {
           className="flex items-center justify-center gap-3 text-muted-foreground"
         >
           <Briefcase className="w-5 h-5 text-primary" />
-          <span className="text-sm">+ diversas StartUps e projetos Freelance</span>
+          <span className="text-sm">
+            + diversas StartUps e projetos Freelance
+          </span>
         </motion.div>
       </div>
     </section>
