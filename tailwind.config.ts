@@ -58,6 +58,10 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        sans: ['"Exo 2"', 'sans-serif'],
+        "mono-code": ['"JetBrains Mono"', 'monospace'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
