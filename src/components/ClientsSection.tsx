@@ -10,15 +10,24 @@ import woliLogo from "@/assets/clients/woli.svg";
 import wisebyteLogo from "@/assets/clients/wisebyte.svg";
 import dulinoLogo from "@/assets/clients/dulino.svg";
 import gorillasLogo from "@/assets/clients/gorillas.png";
+import { link } from "fs";
 
 const clients = [
-  { name: "Nagro", logo: nagroLogo },
-  { name: "START by WGSN", logo: startWgsnLogo },
-  { name: "TeclaT", logo: teclatLogo },
-  { name: "Woli", logo: woliLogo },
-  { name: "WiseByte", logo: wisebyteLogo },
-  { name: "Dulino", logo: dulinoLogo },
-  { name: "Gorillas Group", logo: gorillasLogo },
+  { name: "Nagro", logo: nagroLogo, link: "https://nagro.com.br" },
+  {
+    name: "START by WGSN",
+    logo: startWgsnLogo,
+    link: "https://startbywgsn.com/?lang=pt",
+  },
+  { name: "TeclaT", logo: teclatLogo, link: "https://teclat.com.br" },
+  { name: "Woli", logo: woliLogo, link: "https://woli.com" },
+  { name: "WiseByte", logo: wisebyteLogo, link: "https://wisebyte.com.br" },
+  { name: "Dulino", logo: dulinoLogo, link: "https://sistemadulino.com.br/" },
+  {
+    name: "Gorillas Group",
+    logo: gorillasLogo,
+    link: "https://go-jungle.com/",
+  },
 ];
 
 const ClientsSection = () => {
@@ -51,14 +60,16 @@ const ClientsSection = () => {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="group flex items-center justify-center w-36 h-36 rounded-2xl border border-border/50 bg-card/50 backdrop-blur-sm p-4 hover:border-primary/50 hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all duration-300"
             >
-              <img
-                src={client.logo}
-                alt={client.name}
-                loading="lazy"
-                width={512}
-                height={512}
-                className="w-full h-full object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-              />
+              <a href={client.link} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  loading="lazy"
+                  width={512}
+                  height={512}
+                  className="w-full h-full object-contain filter brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </a>
             </motion.div>
           ))}
         </div>

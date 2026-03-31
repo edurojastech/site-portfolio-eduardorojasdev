@@ -3,7 +3,10 @@ import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => (
-  <section id="hero" className="relative min-h-screen flex items-center justify-center px-6">
+  <section
+    id="hero"
+    className="relative min-h-screen flex items-center justify-center px-6"
+  >
     <div className="max-w-4xl mx-auto text-center relative z-10">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
@@ -22,8 +25,7 @@ const HeroSection = () => (
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
       >
-        Eduardo{" "}
-        <span className="text-gradient">Rojas</span>
+        Eduardo <span className="text-gradient">Rojas</span>
       </motion.h1>
 
       <motion.p
@@ -57,9 +59,21 @@ const HeroSection = () => (
         className="flex items-center justify-center gap-6"
       >
         {[
-          { icon: Github, href: "https://github.com/eduardorojas", label: "GitHub" },
-          { icon: Linkedin, href: "https://linkedin.com/in/eduardorojas", label: "LinkedIn" },
-          { icon: Mail, href: "mailto:eduardo@email.com", label: "Email" },
+          {
+            icon: Github,
+            href: "https://github.com/eduardorojas",
+            label: "GitHub",
+          },
+          {
+            icon: Linkedin,
+            href: "https://linkedin.com/in/eduardorojas",
+            label: "LinkedIn",
+          },
+          {
+            icon: Mail,
+            href: "mailto:edurojas.developer@gmail.com",
+            label: "Email",
+          },
         ].map(({ icon: Icon, href, label }) => (
           <a
             key={label}
@@ -80,7 +94,10 @@ const HeroSection = () => (
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <a href="#about" className="text-muted-foreground hover:text-primary transition-colors animate-bounce block">
+        <a
+          href="#about"
+          className="text-muted-foreground hover:text-primary transition-colors animate-bounce block"
+        >
           <ArrowDown size={24} />
         </a>
       </motion.div>

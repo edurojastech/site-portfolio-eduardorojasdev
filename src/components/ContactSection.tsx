@@ -22,9 +22,9 @@ const ContactSection = () => {
   };
 
   const info = [
-    { icon: Mail, label: "eduardo@email.com" },
-    { icon: Phone, label: "+55 (11) 99999-9999" },
-    { icon: MapPin, label: "São Paulo, Brasil" },
+    { icon: Mail, label: "edurojas.developer@gmail.com" },
+    { icon: Phone, label: "+55 (34) 99115-7227" },
+    { icon: MapPin, label: "Uberlândia - MG, Brasil" },
   ];
 
   return (
@@ -36,7 +36,9 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-mono-code text-primary text-sm">// contato</span>
+          <span className="font-mono-code text-primary text-sm">
+            // contato
+          </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2">
             Vamos <span className="text-gradient">conversar</span>
           </h2>
@@ -49,12 +51,16 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Tem um projeto interessante ou quer bater um papo sobre tecnologia?
-              Ficarei feliz em ouvir de você. Preencha o formulário ou use um dos contatos abaixo.
+              Tem um projeto interessante ou quer bater um papo sobre
+              tecnologia? Ficarei feliz em ouvir de você. Preencha o formulário
+              ou use um dos contatos abaixo.
             </p>
             <div className="space-y-4">
               {info.map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-4 text-muted-foreground">
+                <div
+                  key={label}
+                  className="flex items-center gap-4 text-muted-foreground"
+                >
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Icon size={18} className="text-primary" />
                   </div>
@@ -72,10 +78,25 @@ const ContactSection = () => {
             className="space-y-4"
           >
             <Input placeholder="Seu nome" required className="bg-card" />
-            <Input type="email" placeholder="Seu email" required className="bg-card" />
+            <Input
+              type="email"
+              placeholder="Seu email"
+              required
+              className="bg-card"
+            />
             <Input placeholder="Assunto" required className="bg-card" />
-            <Textarea placeholder="Sua mensagem" required rows={5} className="bg-card resize-none" />
-            <Button type="submit" size="lg" className="w-full glow-primary font-semibold" disabled={sending}>
+            <Textarea
+              placeholder="Sua mensagem"
+              required
+              rows={5}
+              className="bg-card resize-none"
+            />
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full glow-primary font-semibold"
+              disabled={sending}
+            >
               <Send size={18} />
               {sending ? "Enviando..." : "Enviar Mensagem"}
             </Button>
