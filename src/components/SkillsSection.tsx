@@ -37,7 +37,7 @@ const SkillsSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-8 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-8 max-w-4xl mx-auto">
           {skills.map((skill, i) => (
             <motion.div
               key={skill.name}
