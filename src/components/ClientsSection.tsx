@@ -5,7 +5,7 @@ import { Briefcase } from "lucide-react";
 
 import nagroLogo from "@/assets/clients/nagro.png";
 import startWgsnLogo from "@/assets/clients/start-wgsn.png";
-import teclatLogo from "@/assets/clients/teclat.png";
+import teclatLogo from "@/assets/clients/teclat.webp";
 import woliLogo from "@/assets/clients/woli.png";
 import wisebyteLogo from "@/assets/clients/wisebyte.png";
 import dulinoLogo from "@/assets/clients/dulino.png";
