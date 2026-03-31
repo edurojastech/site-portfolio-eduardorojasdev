@@ -2,21 +2,20 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { name: "React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "JavaScript", level: 95 },
-  { name: "Tailwind CSS", level: 92 },
-  { name: "Next.js", level: 85 },
-  { name: "Vue.js", level: 80 },
-  { name: "HTML/CSS", level: 98 },
-  { name: "Git", level: 88 },
-  { name: "Figma", level: 75 },
-  { name: "Node.js", level: 70 },
-];
-
-const techLogos = [
-  "React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind",
-  "Next.js", "Vue.js", "Git", "Figma", "Vite", "Redux",
+  { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Next.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "Vue.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+  { name: "HTML5", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS3", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "Figma", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "Node.js", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Vite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" },
+  { name: "Redux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
+  { name: "Sass", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
 ];
 
 const SkillsSection = () => {
@@ -38,50 +37,30 @@ const SkillsSection = () => {
           </h2>
         </motion.div>
 
-        {/* Skill bars */}
-        <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-20">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-8 justify-items-center">
           {skills.map((skill, i) => (
             <motion.div
               key={skill.name}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
+              initial={{ opacity: 0, y: 20, scale: 0.8 }}
+              animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
+              whileHover={{ scale: 1.15, y: -8 }}
+              className="flex flex-col items-center gap-3 group cursor-default"
             >
-              <div className="flex justify-between mb-2">
-                <span className="text-sm font-medium">{skill.name}</span>
-                <span className="text-sm text-muted-foreground font-mono-code">{skill.level}%</span>
-              </div>
-              <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={inView ? { width: `${skill.level}%` } : { width: 0 }}
-                  transition={{ duration: 1, delay: 0.3 + i * 0.05, ease: "easeOut" }}
-                  className="h-full rounded-full bg-gradient-to-r from-primary to-[hsl(166,85%,50%)]"
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center p-3 group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] transition-all duration-300">
+                <img
+                  src={skill.logo}
+                  alt={skill.name}
+                  className="w-full h-full object-contain drop-shadow-lg"
+                  loading="lazy"
                 />
               </div>
+              <span className="text-xs md:text-sm font-mono-code text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                {skill.name}
+              </span>
             </motion.div>
           ))}
         </div>
-
-        {/* Floating tech tags */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-3"
-        >
-          {techLogos.map((tech, i) => (
-            <motion.span
-              key={tech}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: 0.9 + i * 0.05 }}
-              className="px-4 py-2 text-sm font-mono-code rounded-full border border-border bg-card hover:border-primary/50 hover:text-primary transition-all duration-300 cursor-default"
-            >
-              {tech}
-            </motion.span>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
