@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logoEdu from "@/assets/logoEdu.svg";
 
 const navItems = [
   { label: "Início", href: "#hero" },
@@ -30,8 +31,8 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero" className="text-xl font-bold font-mono-code text-primary">
-          {"<ER />"}
+        <a href="#hero">
+          <img src={logoEdu} alt="Eduardo Rojas" className="h-8" />
         </a>
 
         {/* Desktop */}
