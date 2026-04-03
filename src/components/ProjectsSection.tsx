@@ -105,6 +105,19 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <Button size="lg" variant="outline" asChild>
+            <a href="/projetos">
+              Ver todos os projetos <ExternalLink size={16} />
+            </a>
+          </Button>
+        </motion.div>
       </div>
     </section>
   );
