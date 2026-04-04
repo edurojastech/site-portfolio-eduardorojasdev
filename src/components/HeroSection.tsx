@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroPhoto from "@/assets/hero-photo.png";
 
 const HeroSection = () => (
   <section
@@ -12,8 +13,11 @@ const HeroSection = () => (
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-6"
+        className="mb-6 flex flex-col items-center gap-4"
       >
+        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
+          <img src={heroPhoto} alt="Eduardo Rojas" className="w-full h-full object-cover" />
+        </div>
         <span className="font-mono-code text-primary text-sm md:text-base tracking-widest">
           Olá, eu sou
         </span>
