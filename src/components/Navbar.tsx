@@ -7,7 +7,7 @@ const navItems = [
   { label: "Início", href: "#hero" },
   { label: "Sobre", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Projetos", href: "#projects" },
+  { label: "Projetos", href: "/projetos" },
   { label: "Contato", href: "#contact" },
 ];
 
@@ -27,7 +27,9 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : ""
+        scrolled
+          ? "bg-background/80 backdrop-blur-xl border-b border-border"
+          : ""
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -50,7 +52,10 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground" onClick={() => setOpen(!open)}>
+        <button
+          className="md:hidden text-foreground"
+          onClick={() => setOpen(!open)}
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

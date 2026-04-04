@@ -6,51 +6,60 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 
 const projects = [
   {
-    title: "E-Commerce Dashboard",
-    description: "Dashboard completo para gestão de e-commerce com gráficos interativos, gerenciamento de produtos e analytics em tempo real.",
-    tech: ["React", "TypeScript", "Tailwind", "Recharts"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    title: "LP Positivus (Em desenvolvimento) ",
+    description:
+      "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
+    tech: ["Bootstrap", "Javascript", "HTML", "CSS "],
+    image: "https://eduardorojas.com.br/imagens/positivus.webp",
+    github: "https://github.com/edurojastech/LandingPage_Positivus",
+    live: "https://lp-positivus.netlify.app/",
   },
   {
-    title: "Social Media App",
-    description: "Aplicação social com feed dinâmico, sistema de likes, comentários e perfis de usuário com design moderno.",
-    tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    title: "Studio Rodovalho",
+    description:
+      "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
+    tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
+    image: "https://eduardorojas.com.br/imagens/studiorodovalho.webp",
+    github: null,
+    live: "https://studiorodovalho.netlify.app/",
   },
   {
-    title: "Design System",
-    description: "Design system completo com mais de 50 componentes reutilizáveis, documentação interativa e temas customizáveis.",
-    tech: ["React", "Storybook", "Styled Components"],
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
-    github: "#",
-    live: "#",
+    title: "Escola de Jazz",
+    description:
+      "Landing Page para divulgação de uma escola de Jazz, layout desenvolvido para escola de programação OneBitCode.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    image: "https://eduardorojas.com.br/imagens/lp-jazz-school.webp",
+    github: "https://github.com/edurojastech/jazz-school",
+    live: "https://jazz-school-lp.netlify.app",
   },
   {
     title: "Task Management",
-    description: "App de gerenciamento de tarefas com drag & drop, filtros avançados, labels e integração com calendar.",
+    description:
+      "App de gerenciamento de tarefas com drag & drop, filtros avançados, labels e integração com calendar.",
     tech: ["Vue.js", "TypeScript", "Pinia", "Supabase"],
-    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
-    github: "#",
+    image:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
+    github: null,
     live: "#",
   },
   {
     title: "Landing Page Builder",
-    description: "Ferramenta drag & drop para criação de landing pages com templates prontos e exportação de código limpo.",
+    description:
+      "Ferramenta drag & drop para criação de landing pages com templates prontos e exportação de código limpo.",
     tech: ["React", "DnD Kit", "Tailwind", "Zustand"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
-    github: "#",
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
+    github: null,
     live: "#",
   },
   {
     title: "API Gateway",
-    description: "Gateway de API com rate limiting, autenticação JWT, logging e dashboard de monitoramento em tempo real.",
+    description:
+      "Gateway de API com rate limiting, autenticação JWT, logging e dashboard de monitoramento em tempo real.",
     tech: ["Node.js", "Express", "Redis", "Docker"],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-    github: "#",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+    github: null,
     live: "#",
   },
 ];
@@ -73,12 +82,15 @@ const Projects = () => {
             </Link>
           </Button>
 
-          <span className="font-mono-code text-primary text-sm block">// todos os projetos</span>
+          <span className="font-mono-code text-primary text-sm block">
+            // todos os projetos
+          </span>
           <h1 className="text-4xl md:text-6xl font-bold mt-2">
             Meus <span className="text-gradient">Projetos</span>
           </h1>
           <p className="text-muted-foreground mt-4 max-w-2xl">
-            Uma coleção completa dos meus trabalhos, desde dashboards interativos até sistemas complexos de backend.
+            Uma coleção completa dos meus trabalhos, desde dashboards
+            interativos até sistemas complexos de backend.
           </p>
         </motion.div>
 
@@ -109,19 +121,32 @@ const Projects = () => {
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.tech.map((t) => (
-                    <span key={t} className="text-xs font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                    <span
+                      key={t}
+                      className="text-xs font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+                    >
                       {t}
                     </span>
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button size="sm" variant="outline" asChild>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <Github size={16} /> Código
-                    </a>
-                  </Button>
+                  {project.github && (
+                    <Button size="sm" variant="outline" asChild>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Github size={16} /> Código
+                      </a>
+                    </Button>
+                  )}
                   <Button size="sm" asChild>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <ExternalLink size={16} /> Demo
                     </a>
                   </Button>
