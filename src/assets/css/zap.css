@@ -1,0 +1,9 @@
+.zap {
+  position: fixed;
+  right: 1%;
+  bottom: 2%;
+  border-radius: 50% 50%;
+  border: 2px solid #d4d7de;
+  animation: pulse 2s infinite;
+  z-index: 1000;
+}

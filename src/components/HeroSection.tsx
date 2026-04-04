@@ -15,8 +15,12 @@ const HeroSection = () => (
         transition={{ duration: 0.8 }}
         className="mb-6 flex flex-col items-center gap-4"
       >
-        <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
-          <img src={heroPhoto} alt="Eduardo Rojas" className="w-full h-full object-cover" />
+        <div className="w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
+          <img
+            src={heroPhoto}
+            alt="Eduardo Rojas"
+            className="w-full h-full object-cover"
+          />
         </div>
         <span className="font-mono-code text-primary text-sm md:text-base tracking-widest">
           Olá, eu sou
@@ -49,7 +53,7 @@ const HeroSection = () => (
         className="flex items-center justify-center gap-4 mb-12"
       >
         <Button size="lg" className="glow-primary font-semibold" asChild>
-          <a href="#projects">Ver Projetos</a>
+          <a href="/projetos">Ver Projetos</a>
         </Button>
         <Button size="lg" variant="outline" asChild>
           <a href="#contact">Contato</a>
@@ -65,12 +69,12 @@ const HeroSection = () => (
         {[
           {
             icon: Github,
-            href: "https://github.com/eduardorojas",
+            href: "https://github.com/edurojastech",
             label: "GitHub",
           },
           {
             icon: Linkedin,
-            href: "https://linkedin.com/in/eduardorojas",
+            href: "https://www.linkedin.com/in/edurojastech",
             label: "LinkedIn",
           },
           {

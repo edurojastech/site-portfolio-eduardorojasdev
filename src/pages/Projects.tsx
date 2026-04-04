@@ -3,8 +3,18 @@ import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
+import plataformaCursos from "@/assets/plataforma-cursos.png";
 
 const projects = [
+  {
+    title: "CyberCollege (em desenvolvimento)",
+    description:
+      "Uma plataforma de cursos online, oferecendo uma variedade de cursos em diversas áreas.",
+    tech: ["React.js", "TypeScript", "Tailwind CSS", "Figma"],
+    image: plataformaCursos,
+    github: null,
+    live: "https://course-platform-dashboard.netlify.app/auth",
+  },
   {
     title: "LP Positivus (Em desenvolvimento) ",
     description:
@@ -33,14 +43,13 @@ const projects = [
     live: "https://jazz-school-lp.netlify.app",
   },
   {
-    title: "Task Management",
+    title: "Agência SitesVeloz",
     description:
-      "App de gerenciamento de tarefas com drag & drop, filtros avançados, labels e integração com calendar.",
-    tech: ["Vue.js", "TypeScript", "Pinia", "Supabase"],
-    image:
-      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
+      "Site de agência digital especializada em criação de sites para empresas e profissionais que buscam uma presença no digital.",
+    tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
+    image: "https://eduardorojas.com.br/imagens/sitesveloz.webp",
     github: null,
-    live: "#",
+    live: "https://sitesveloz.com.br/",
   },
   {
     title: "Landing Page Builder",
@@ -49,16 +58,6 @@ const projects = [
     tech: ["React", "DnD Kit", "Tailwind", "Zustand"],
     image:
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
-    github: null,
-    live: "#",
-  },
-  {
-    title: "API Gateway",
-    description:
-      "Gateway de API com rate limiting, autenticação JWT, logging e dashboard de monitoramento em tempo real.",
-    tech: ["Node.js", "Express", "Redis", "Docker"],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
     github: null,
     live: "#",
   },
@@ -89,8 +88,8 @@ const Projects = () => {
             Meus <span className="text-gradient">Projetos</span>
           </h1>
           <p className="text-muted-foreground mt-4 max-w-2xl">
-            Uma coleção completa dos meus trabalhos, desde dashboards
-            interativos até sistemas complexos de backend.
+            Uma coleção completa dos meus trabalhos, desde interfaces de <br />
+            dashboards interativos até sites e landingpages.
           </p>
         </motion.div>
 

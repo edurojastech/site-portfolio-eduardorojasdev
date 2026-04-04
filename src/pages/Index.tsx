@@ -7,6 +7,8 @@ import ClientsSection from "@/components/ClientsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import "@/assets/css/zap.css";
+import zap from "@/assets/whatsapp.png";
 
 const Index = () => {
   return (
@@ -20,6 +22,14 @@ const Index = () => {
       {/* <ProjectsSection /> */}
       <ContactSection />
       <Footer />
+
+      <a
+        href="https://api.whatsapp.com/send?phone=5534991157227"
+        target="_blank"
+        className="zap"
+      >
+        <img src={zap} alt="Contato" loading="lazy" width="72" height="72" />
+      </a>
     </div>
   );
 };
