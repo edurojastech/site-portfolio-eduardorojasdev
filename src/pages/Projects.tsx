@@ -9,24 +9,6 @@ import acelcImg from "@/assets/projects/acelc.png";
 
 const projects = [
   {
-    title: "CyberCollege (em desenvolvimento)",
-    description:
-      "Uma plataforma de cursos online, oferecendo uma variedade de cursos em diversas áreas.",
-    tech: ["React.js", "TypeScript", "Tailwind CSS", "Figma"],
-    image: plataformaCursos,
-    github: null,
-    live: "https://course-platform-dashboard.netlify.app/auth",
-  },
-  {
-    title: "LP Positivus (Em desenvolvimento) ",
-    description:
-      "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
-    tech: ["Bootstrap", "Javascript", "HTML", "CSS "],
-    image: "https://eduardorojas.com.br/imagens/positivus.webp",
-    github: "https://github.com/edurojastech/LandingPage_Positivus",
-    live: "https://lp-positivus.netlify.app/",
-  },
-  {
     title: "Studio Rodovalho",
     description:
       "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
@@ -70,6 +52,24 @@ const projects = [
     image: acelcImg,
     github: null,
     live: "https://acelc.netlify.app/",
+  },
+  {
+    title: "CyberCollege (em desenvolvimento)",
+    description:
+      "Uma plataforma de cursos online, oferecendo uma variedade de cursos em diversas áreas.",
+    tech: ["React.js", "TypeScript", "Tailwind CSS", "Figma"],
+    image: plataformaCursos,
+    github: null,
+    live: "https://course-platform-dashboard.netlify.app/auth",
+  },
+  {
+    title: "LP Positivus (Em desenvolvimento) ",
+    description:
+      "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
+    tech: ["Bootstrap", "Javascript", "HTML", "CSS "],
+    image: "https://eduardorojas.com.br/imagens/positivus.webp",
+    github: "https://github.com/edurojastech/LandingPage_Positivus",
+    live: "https://lp-positivus.netlify.app/",
   },
 ];
 
