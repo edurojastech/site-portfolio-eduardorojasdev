@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import plataformaCursos from "@/assets/plataforma-cursos.png";
+import fitmakerImg from "@/assets/projects/fitmaker.png";
+import acelcImg from "@/assets/projects/acelc.png";
 
 const projects = [
   {
@@ -52,14 +54,22 @@ const projects = [
     live: "https://sitesveloz.com.br/",
   },
   {
-    title: "Landing Page Builder",
+    title: "Plataforma Fitness Elite",
     description:
-      "Ferramenta drag & drop para criação de landing pages com templates prontos e exportação de código limpo.",
-    tech: ["React", "DnD Kit", "Tailwind", "Zustand"],
-    image:
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=400&fit=crop",
+      "Site para a Plataforma Fitness Elite (FitMaker), focada em treinos personalizados e experiência fitness premium.",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    image: fitmakerImg,
     github: null,
-    live: "#",
+    live: "https://lp-fitmaker.netlify.app/",
+  },
+  {
+    title: "Corretora Acelc",
+    description:
+      "Site novo da Corretora Acelc, com layout moderno e responsivo para divulgação de serviços e contato.",
+    tech: ["HTML", "CSS", "JavaScript", "SEO"],
+    image: acelcImg,
+    github: null,
+    live: "https://acelc.netlify.app/",
   },
 ];
 
