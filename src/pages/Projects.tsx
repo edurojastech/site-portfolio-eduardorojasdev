@@ -39,7 +39,7 @@ const projects = [
     title: "Plataforma Fitness Elite",
     description:
       "Site para a Plataforma Fitness Elite (FitMaker), focada em treinos personalizados e experiência fitness premium.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+    tech: ["Vue.js", "Tailwind CSS"],
     image: fitmakerImg,
     github: null,
     live: "https://lp-fitmaker.netlify.app/",
