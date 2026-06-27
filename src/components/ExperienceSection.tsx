@@ -89,6 +89,42 @@ const highlights = [
   "REST · GraphQL · KYC · SCORM",
 ];
 
+type Exp = (typeof experiences)[number];
+
+const ExperienceCard = ({ exp, align }: { exp: Exp; align: "left" | "right" }) => {
+  const isRight = align === "right";
+  return (
+    <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500">
+      <div className={`flex items-center gap-2 mb-2 ${isRight ? "md:justify-end" : ""}`}>
+        <Briefcase size={14} className="text-primary" />
+        <span className="font-mono-code text-xs text-muted-foreground">{exp.period}</span>
+      </div>
+      <h3 className={`text-lg font-semibold ${isRight ? "md:text-right" : ""}`}>{exp.role}</h3>
+      <p className={`text-primary text-sm mb-3 ${isRight ? "md:text-right" : ""}`}>{exp.company}</p>
+      <ul
+        className={`text-sm text-muted-foreground space-y-1.5 leading-relaxed ${
+          isRight ? "md:text-right" : ""
+        }`}
+      >
+        {exp.bullets.map((b) => (
+          <li key={b}>{b}</li>
+        ))}
+      </ul>
+      <div className={`flex flex-wrap gap-1.5 mt-4 ${isRight ? "md:justify-end" : ""}`}>
+        {exp.stack.map((s) => (
+          <span
+            key={s}
+            className="text-[11px] font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+          >
+            {s}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
 const ExperienceSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
@@ -142,55 +178,19 @@ const ExperienceSection = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
-                  className={`relative md:grid md:grid-cols-2 md:gap-10 ${
-                    isLeft ? "" : "md:[&>*:first-child]:col-start-2"
-                  }`}
+                  className="relative md:flex md:items-start md:gap-0"
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary shadow-[0_0_0_4px_hsl(var(--background)),0_0_20px_hsl(var(--primary)/0.6)] md:-translate-x-1/2" />
+                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary shadow-[0_0_0_4px_hsl(var(--background)),0_0_20px_hsl(var(--primary)/0.6)] md:-translate-x-1/2 z-10" />
 
-                  <div
-                    className={`ml-12 md:ml-0 ${
-                      isLeft ? "md:pr-10 md:text-right" : "md:pl-10"
-                    }`}
-                  >
-                    <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500">
-                      <div
-                        className={`flex items-center gap-2 mb-2 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
-                      >
-                        <Briefcase size={14} className="text-primary" />
-                        <span className="font-mono-code text-xs text-muted-foreground">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-semibold">{exp.role}</h3>
-                      <p className="text-primary text-sm mb-3">{exp.company}</p>
-                      <ul
-                        className={`text-sm text-muted-foreground space-y-1.5 leading-relaxed ${
-                          isLeft ? "md:text-right" : ""
-                        }`}
-                      >
-                        {exp.bullets.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                      <div
-                        className={`flex flex-wrap gap-1.5 mt-4 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
-                      >
-                        {exp.stack.map((s) => (
-                          <span
-                            key={s}
-                            className="text-[11px] font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+                  {/* Left slot */}
+                  <div className={`hidden md:block md:w-1/2 md:pr-10 ${isLeft ? "" : "md:invisible"}`}>
+                    {isLeft && <ExperienceCard exp={exp} align="right" />}
+                  </div>
+
+                  {/* Right slot (also mobile) */}
+                  <div className={`ml-12 md:ml-0 md:w-1/2 md:pl-10 ${isLeft ? "md:hidden" : ""}`}>
+                    <ExperienceCard exp={exp} align="left" />
                   </div>
                 </motion.div>
               );
