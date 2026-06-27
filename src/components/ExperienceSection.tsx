@@ -89,6 +89,42 @@ const highlights = [
   "REST · GraphQL · KYC · SCORM",
 ];
 
+type Exp = (typeof experiences)[number];
+
+const ExperienceCard = ({ exp, align }: { exp: Exp; align: "left" | "right" }) => {
+  const isRight = align === "right";
+  return (
+    <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500">
+      <div className={`flex items-center gap-2 mb-2 ${isRight ? "md:justify-end" : ""}`}>
+        <Briefcase size={14} className="text-primary" />
+        <span className="font-mono-code text-xs text-muted-foreground">{exp.period}</span>
+      </div>
+      <h3 className={`text-lg font-semibold ${isRight ? "md:text-right" : ""}`}>{exp.role}</h3>
+      <p className={`text-primary text-sm mb-3 ${isRight ? "md:text-right" : ""}`}>{exp.company}</p>
+      <ul
+        className={`text-sm text-muted-foreground space-y-1.5 leading-relaxed ${
+          isRight ? "md:text-right" : ""
+        }`}
+      >
+        {exp.bullets.map((b) => (
+          <li key={b}>{b}</li>
+        ))}
+      </ul>
+      <div className={`flex flex-wrap gap-1.5 mt-4 ${isRight ? "md:justify-end" : ""}`}>
+        {exp.stack.map((s) => (
+          <span
+            key={s}
+            className="text-[11px] font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+          >
+            {s}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
 const ExperienceSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
