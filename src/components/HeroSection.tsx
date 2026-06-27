@@ -58,9 +58,20 @@ const HeroSection = () => (
           <a href="/projetos">Ver Projetos</a>
         </Button>
         <Button size="lg" variant="outline" asChild>
+          <a
+            href={curriculo.url}
+            download="Curriculo_Eduardo_Rojas.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Download size={18} /> Baixar CV
+          </a>
+        </Button>
+        <Button size="lg" variant="ghost" asChild>
           <a href="#contact">Contato</a>
         </Button>
       </motion.div>
+
 
       <motion.div
         initial={{ opacity: 0 }}
