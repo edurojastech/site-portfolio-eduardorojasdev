@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/hero-photo.png";
+import curriculo from "@/assets/curriculo.pdf.asset.json";
+
 
 const HeroSection = () => (
   <section
