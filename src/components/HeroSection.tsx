@@ -2,7 +2,26 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/hero-photo.png";
-import curriculo from "@/assets/curriculo.pdf.asset.json";
+
+const CV_URL = "/Curriculo_Eduardo_Rojas.pdf";
+
+const handleDownloadCV = async () => {
+  try {
+    const res = await fetch(CV_URL);
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Curriculo_Eduardo_Rojas.pdf";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  } catch {
+    window.open(CV_URL, "_blank");
+  }
+};
+
 
 
 const HeroSection = () => (
@@ -57,15 +76,12 @@ const HeroSection = () => (
         <Button size="lg" className="glow-primary font-semibold" asChild>
           <a href="/projetos">Ver Projetos</a>
         </Button>
-        <Button size="lg" variant="outline" asChild>
-          <a
-            href={curriculo.url}
-            download="Curriculo_Eduardo_Rojas.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Download size={18} /> Baixar CV
-          </a>
+        <Button
+          size="lg"
+          variant="outline"
+          onClick={handleDownloadCV}
+        >
+          <Download size={18} /> Baixar CV
         </Button>
       </motion.div>
 
