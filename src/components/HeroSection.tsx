@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/hero-photo.png";
+import curriculo from "@/assets/curriculo.pdf.asset.json";
+
 
 const HeroSection = () => (
   <section
@@ -56,9 +58,20 @@ const HeroSection = () => (
           <a href="/projetos">Ver Projetos</a>
         </Button>
         <Button size="lg" variant="outline" asChild>
+          <a
+            href={curriculo.url}
+            download="Curriculo_Eduardo_Rojas.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Download size={18} /> Baixar CV
+          </a>
+        </Button>
+        <Button size="lg" variant="ghost" asChild>
           <a href="#contact">Contato</a>
         </Button>
       </motion.div>
+
 
       <motion.div
         initial={{ opacity: 0 }}
