@@ -156,45 +156,6 @@ const ExperienceSection = () => {
                   <div className={`ml-12 md:ml-0 md:w-1/2 md:pl-10 ${isLeft ? "md:hidden" : ""}`}>
                     <ExperienceCard exp={exp} align="left" />
                   </div>
-
-                    <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500">
-                      <div
-                        className={`flex items-center gap-2 mb-2 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
-                      >
-                        <Briefcase size={14} className="text-primary" />
-                        <span className="font-mono-code text-xs text-muted-foreground">
-                          {exp.period}
-                        </span>
-                      </div>
-                      <h3 className="text-lg font-semibold">{exp.role}</h3>
-                      <p className="text-primary text-sm mb-3">{exp.company}</p>
-                      <ul
-                        className={`text-sm text-muted-foreground space-y-1.5 leading-relaxed ${
-                          isLeft ? "md:text-right" : ""
-                        }`}
-                      >
-                        {exp.bullets.map((b) => (
-                          <li key={b}>{b}</li>
-                        ))}
-                      </ul>
-                      <div
-                        className={`flex flex-wrap gap-1.5 mt-4 ${
-                          isLeft ? "md:justify-end" : ""
-                        }`}
-                      >
-                        {exp.stack.map((s) => (
-                          <span
-                            key={s}
-                            className="text-[11px] font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
-                          >
-                            {s}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
                 </motion.div>
               );
             })}
