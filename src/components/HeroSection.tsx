@@ -3,7 +3,7 @@ import { ArrowDown, Eye, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/hero-photo.png";
 
-const CV_URL = "https://dev.eduardorojas.com.br/Curriculo_Eduardo_Rojas.pdf";
+const CV_URL = "/cv";
 
 
 
