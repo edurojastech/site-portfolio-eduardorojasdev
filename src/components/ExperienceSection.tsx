@@ -142,18 +142,21 @@ const ExperienceSection = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.1 + i * 0.05 }}
-                  className={`relative md:grid md:grid-cols-2 md:gap-10 ${
-                    isLeft ? "" : "md:[&>*:first-child]:col-start-2"
-                  }`}
+                  className="relative md:flex md:items-start md:gap-0"
                 >
                   {/* Dot */}
-                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary shadow-[0_0_0_4px_hsl(var(--background)),0_0_20px_hsl(var(--primary)/0.6)] md:-translate-x-1/2" />
+                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary shadow-[0_0_0_4px_hsl(var(--background)),0_0_20px_hsl(var(--primary)/0.6)] md:-translate-x-1/2 z-10" />
 
-                  <div
-                    className={`ml-12 md:ml-0 ${
-                      isLeft ? "md:pr-10 md:text-right" : "md:pl-10"
-                    }`}
-                  >
+                  {/* Left slot */}
+                  <div className={`hidden md:block md:w-1/2 md:pr-10 ${isLeft ? "" : "md:invisible"}`}>
+                    {isLeft && <ExperienceCard exp={exp} align="right" />}
+                  </div>
+
+                  {/* Right slot (also mobile) */}
+                  <div className={`ml-12 md:ml-0 md:w-1/2 md:pl-10 ${isLeft ? "md:hidden" : ""}`}>
+                    <ExperienceCard exp={exp} align="left" />
+                  </div>
+
                     <div className="group p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-all duration-500">
                       <div
                         className={`flex items-center gap-2 mb-2 ${
