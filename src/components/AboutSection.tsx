@@ -32,12 +32,37 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-muted-foreground text-center max-w-3xl mx-auto text-lg mb-16 leading-relaxed"
+          className="text-muted-foreground text-center max-w-3xl mx-auto text-lg mb-8 leading-relaxed"
         >
-          Sou um desenvolvedor frontend com experiência em criar interfaces modernas e responsivas.
-          Trabalho com as tecnologias mais recentes do ecossistema web para entregar produtos 
-          de alta qualidade que fazem a diferença na experiência do usuário.
+          Desenvolvedor Frontend com <span className="text-primary font-semibold">mais de 6 anos</span> de
+          experiência criando aplicações web escaláveis, responsivas e orientadas a performance.
+          Especialista no ecossistema frontend com <span className="text-primary font-semibold">Vue/Nuxt</span> e{" "}
+          <span className="text-primary font-semibold">React/Next</span>, com vivência em plataformas
+          SaaS, White Label, Bets, dashboards administrativos e sistemas de alta demanda.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-2 mb-16"
+        >
+          {[
+            "+6 anos de experiência",
+            "SaaS · White Label · Bets",
+            "Vue/Nuxt & React/Next",
+            "REST · GraphQL · KYC",
+            "Mobile First · Performance",
+          ].map((h) => (
+            <span
+              key={h}
+              className="font-mono-code text-xs px-3 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/20"
+            >
+              {h}
+            </span>
+          ))}
+        </motion.div>
+
 
         <div className="grid md:grid-cols-3 gap-6">
           {cards.map((card, i) => (
