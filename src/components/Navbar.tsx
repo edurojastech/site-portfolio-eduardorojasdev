@@ -39,17 +39,24 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex gap-8">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
+        <ul className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => {
+            const isContact = item.href === "#contact";
+            return (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className={
+                    isContact
+                      ? "text-sm text-foreground border border-white/40 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
+                      : "text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                  }
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Mobile toggle */}

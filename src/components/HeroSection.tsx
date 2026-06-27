@@ -67,9 +67,6 @@ const HeroSection = () => (
             <Download size={18} /> Baixar CV
           </a>
         </Button>
-        <Button size="lg" variant="ghost" asChild>
-          <a href="#contact">Contato</a>
-        </Button>
       </motion.div>
 
 
