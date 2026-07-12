@@ -1,5 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import piniLogo from "../assets/pinia.svg";
+import claudeAsset from "@/assets/claude.webp.asset.json";
+import chatgptAsset from "@/assets/chatgpt.webp.asset.json";
 import { useRef } from "react";
 
 const skills = [
@@ -82,7 +84,7 @@ const skills = [
   },
   {
     name: "ChatGPT",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg",
+    logo: chatgptAsset.url,
   },
   {
     name: "GitHub Copilot",
@@ -90,7 +92,7 @@ const skills = [
   },
   {
     name: "Claude AI",
-    logo: "https://claude.ai/favicon.ico",
+    logo: claudeAsset.url,
   },
   {
     name: "Cursor",

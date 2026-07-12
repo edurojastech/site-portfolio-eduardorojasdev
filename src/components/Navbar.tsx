@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import logoEdu from "@/assets/logoEdu.svg";
+import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
   { label: "Início", href: "#hero" },
@@ -15,6 +16,7 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -39,33 +41,51 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => {
-            const isContact = item.href === "#contact";
-            return (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className={
-                    isContact
-                      ? "text-sm text-foreground border border-white/40 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
-                      : "text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-                  }
-                >
-                  {item.label}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex items-center gap-8">
+            {navItems.map((item) => {
+              const isContact = item.href === "#contact";
+              return (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className={
+                      isContact
+                        ? "text-sm text-foreground border border-foreground/30 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
+                        : "text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
+                    }
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
+            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+        </div>
 
         {/* Mobile toggle */}
-        <button
-          className="md:hidden text-foreground"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
+            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
+          >
+            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+          </button>
+          <button
+            className="text-foreground"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
