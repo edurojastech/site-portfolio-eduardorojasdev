@@ -39,6 +39,13 @@ const AboutSection = () => {
           Especialista no ecossistema frontend com <span className="text-primary font-semibold">Vue/Nuxt</span> e{" "}
           <span className="text-primary font-semibold">React/Next</span>, com vivência em plataformas
           SaaS, White Label, Bets, dashboards administrativos e sistemas de alta demanda.
+          Também utilizo ferramentas de <span className="text-primary font-semibold">IA</span> como{" "}
+          <span className="text-primary font-semibold">Lovable</span>,{" "}
+          <span className="text-primary font-semibold">ChatGPT</span>,{" "}
+          <span className="text-primary font-semibold">Claude</span>,{" "}
+          <span className="text-primary font-semibold">GitHub Copilot</span> e{" "}
+          <span className="text-primary font-semibold">Cursor</span> para acelerar o desenvolvimento,
+          prototipar rapidamente e entregar soluções com mais qualidade e agilidade.
         </motion.p>
 
         <motion.div
