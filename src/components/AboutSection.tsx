@@ -60,6 +60,7 @@ const AboutSection = () => {
             "Vue/Nuxt & React/Next",
             "REST · GraphQL · KYC",
             "Mobile First · Performance",
+            "IA · Lovable · Copilot · Cursor",
           ].map((h) => (
             <span
               key={h}
