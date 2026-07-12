@@ -38,8 +38,8 @@ const projects = [
   {
     title: "Plataforma Fitness Elite",
     description:
-      "Site para a Plataforma Fitness Elite (FitMaker), focada em treinos personalizados e experiência fitness premium.",
-    tech: ["Vue.js", "Tailwind CSS"],
+      "Projeto de destaque: plataforma Fitness Elite (FitMaker) focada em treinos personalizados e experiência fitness premium, com interface moderna, responsiva e alta performance. Desenvolvida com Vue.js e Tailwind CSS.",
+    tech: ["Vue.js", "Tailwind CSS", "Performance", "UX"],
     image: fitmakerImg,
     github: null,
     live: "https://lp-fitmaker.netlify.app/",
@@ -47,17 +47,17 @@ const projects = [
   {
     title: "Corretora Acelc",
     description:
-      "Site novo da Corretora Acelc, com layout moderno e responsivo para divulgação de serviços e contato.",
+      "Projeto de destaque: site institucional da Corretora Acelc com identidade visual renovada, layout moderno e totalmente responsivo, otimizado para SEO e conversão de contatos.",
     tech: ["HTML", "CSS", "JavaScript", "SEO"],
     image: acelcImg,
     github: null,
     live: "https://acelc.netlify.app/",
   },
   {
-    title: "CyberCollege (em desenvolvimento)",
+    title: "CyberCollege",
     description:
-      "Uma plataforma de cursos online, oferecendo uma variedade de cursos em diversas áreas.",
-    tech: ["React.js", "TypeScript", "Tailwind CSS", "Figma"],
+      "Projeto de destaque construído com Lovable AI: plataforma de cursos online com dashboard completo, autenticação e experiência de aprendizado moderna. Desenvolvimento acelerado com IA + React.",
+    tech: ["Lovable AI", "React", "TypeScript", "Tailwind CSS"],
     image: plataformaCursos,
     github: null,
     live: "https://course-platform-dashboard.netlify.app/auth",
