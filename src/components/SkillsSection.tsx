@@ -76,6 +76,26 @@ const skills = [
     name: "Sass",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg",
   },
+  {
+    name: "Lovable AI",
+    logo: "https://lovable.dev/favicon.ico",
+  },
+  {
+    name: "ChatGPT",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg",
+  },
+  {
+    name: "GitHub Copilot",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  },
+  {
+    name: "Claude AI",
+    logo: "https://claude.ai/favicon.ico",
+  },
+  {
+    name: "Cursor",
+    logo: "https://www.cursor.com/favicon.ico",
+  },
 ];
 
 const SkillsSection = () => {
