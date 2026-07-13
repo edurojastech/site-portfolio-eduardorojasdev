@@ -32,7 +32,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-muted-foreground text-center max-w-3xl mx-auto text-lg mb-8 leading-relaxed"
+          className="text-muted-foreground max-w-3xl mx-auto text-left text-base mb-8 leading-relaxed md:text-center md:text-lg"
         >
           Desenvolvedor Frontend com <span className="text-primary font-semibold">mais de 6 anos</span> de
           experiência criando aplicações web escaláveis, responsivas e orientadas a performance.
