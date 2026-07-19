@@ -125,15 +125,15 @@ const SkillLogo = ({
     whileHover={{ scale: 1.12, y: -8 }}
     className="flex min-h-[118px] flex-col items-center justify-start gap-3 group cursor-default md:min-h-[132px]"
   >
-    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center p-3 group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] transition-all duration-300">
+    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-border bg-card/50 backdrop-blur-sm flex items-center justify-center p-3 group-hover:border-primary/60 group-hover:shadow-[0_0_20px_hsl(var(--primary)/0.2)] transition-all duration-300 [.light_&]:border-white/35 [.light_&]:bg-white/10 [.light_&]:group-hover:border-white/80 [.light_&]:group-hover:shadow-[0_0_20px_rgb(255_255_255/0.24)]">
       <img
         src={skill.logo}
         alt={skill.name}
-        className="w-full h-full object-contain drop-shadow-lg"
+        className="w-full h-full object-contain drop-shadow-lg transition duration-300 [.light_&]:brightness-0 [.light_&]:invert"
         loading="lazy"
       />
     </div>
-    <span className="w-full text-center text-xs md:text-sm font-mono-code text-muted-foreground group-hover:text-primary transition-colors duration-300">
+    <span className="w-full text-center text-xs md:text-sm font-mono-code text-muted-foreground group-hover:text-primary transition-colors duration-300 [.light_&]:text-white [.light_&]:group-hover:text-white">
       {skill.name}
     </span>
   </motion.div>
@@ -144,7 +144,7 @@ const SkillsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="pt-32 pb-14 md:pb-20 px-6 relative z-10">
+    <section id="skills" className="pt-32 pb-14 md:pb-20 px-6 relative z-10 transition-colors duration-300 [.light_&]:bg-[#23A083] [.light_&]:text-white">
       <div className="max-w-6xl mx-auto" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -152,11 +152,11 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="font-mono-code text-primary text-sm">
+          <span className="font-mono-code text-primary text-sm [.light_&]:text-white">
             // habilidades
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mt-2">
-            Tech <span className="text-gradient">Stack</span>
+            Tech <span className="text-gradient [.light_&]:bg-none [.light_&]:text-white">Stack</span>
           </h2>
         </motion.div>
 
@@ -190,8 +190,8 @@ const SkillsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0 border-primary/30 bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground" />
-          <CarouselNext className="right-0 border-primary/30 bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground" />
+          <CarouselPrevious className="left-0 border-primary/30 bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground [.light_&]:border-white/35 [.light_&]:bg-white/10 [.light_&]:text-white [.light_&]:hover:bg-white [.light_&]:hover:text-[#23A083]" />
+          <CarouselNext className="right-0 border-primary/30 bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground [.light_&]:border-white/35 [.light_&]:bg-white/10 [.light_&]:text-white [.light_&]:hover:bg-white [.light_&]:hover:text-[#23A083]" />
         </Carousel>
       </div>
     </section>
