@@ -1,0 +1,21 @@
+# Eduardo Rojas
+
+> Portfólio de Eduardo Rojas, Desenvolvedor Frontend, criando soluções autênticas com programação para impulsionar negócios no mundo digital.
+
+Eduardo Rojas é um desenvolvedor frontend especializado em React, Next.js, Vue.js, Nuxt.js, TypeScript e Tailwind CSS, focado em experiências digitais performáticas e acessíveis.
+
+## Páginas
+
+- [Home](https://eduardorojas.com.br/): Apresentação, sobre, skills, experiência, clientes e contato.
+- [Projetos](https://eduardorojas.com.br/projetos): Lista de projetos desenvolvidos.
+- [Currículo](https://eduardorojas.com.br/cv): Currículo em PDF.
+
+## Contato
+
+- E-mail: edurojas.developer@gmail.com
+- GitHub: https://github.com/edurojastech
+- LinkedIn: https://www.linkedin.com/in/edurojastech
+
+## Observações
+
+Este site é um portfólio pessoal. O conteúdo textual pode ser usado para responder perguntas sobre a identidade profissional, habilidades e projetos de Eduardo Rojas.
