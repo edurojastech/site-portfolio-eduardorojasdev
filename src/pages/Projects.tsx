@@ -69,7 +69,7 @@ const projects = [
     tech: ["Bootstrap", "Javascript", "HTML", "CSS "],
     image: "https://eduardorojas.com.br/imagens/positivus.webp",
     github: "https://github.com/edurojastech/LandingPage_Positivus",
-    live: "https://lp-positivus.netlify.app/",
+    live: "https://site-positivus.netlify.app/",
   },
 ];
 
