@@ -91,7 +91,7 @@ const projects = [
     github: null,
     live: "https://movieswefit.netlify.app/",
   },
-
+  {
     title: "LP Positivus (Em desenvolvimento) ",
     description:
       "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
