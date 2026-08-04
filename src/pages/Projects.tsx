@@ -6,6 +6,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import plataformaCursos from "@/assets/plataforma-cursos.png";
 import fitmakerImg from "@/assets/projects/fitmaker.png";
 import acelcImg from "@/assets/projects/acelc.png";
+import lokiImg from "@/assets/projects/loki.png";
 
 const projects = [
   {
