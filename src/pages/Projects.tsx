@@ -83,6 +83,15 @@ const projects = [
     live: "https://loki-page.netlify.app/",
   },
   {
+    title: "WeMovie E-commerce",
+    description:
+      "Simulador de página de compra de filmes: catálogo, seleção de títulos, carrinho e fluxo de checkout completo, com interface responsiva e experiência de e-commerce.",
+    tech: ["React", "JavaScript", "E-commerce", "UX"],
+    image: moviesImg,
+    github: null,
+    live: "https://movieswefit.netlify.app/",
+  },
+
     title: "LP Positivus (Em desenvolvimento) ",
     description:
       "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
