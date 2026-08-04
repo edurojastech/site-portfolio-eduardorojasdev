@@ -6,6 +6,7 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import plataformaCursos from "@/assets/plataforma-cursos.png";
 import fitmakerImg from "@/assets/projects/fitmaker.png";
 import acelcImg from "@/assets/projects/acelc.png";
+import lokiImg from "@/assets/projects/loki.png";
 
 const projects = [
   {
@@ -61,6 +62,15 @@ const projects = [
     image: plataformaCursos,
     github: null,
     live: "https://course-platform-dashboard.netlify.app/auth",
+  },
+  {
+    title: "Loki",
+    description:
+      "Landing Page temática da série Loki (Marvel Studios), com layout imersivo, hero em destaque, informações da série e chamadas para assistir e ver o trailer. Desenvolvida com HTML, CSS e JavaScript puros.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: lokiImg,
+    github: null,
+    live: "https://loki-page.netlify.app/",
   },
   {
     title: "LP Positivus (Em desenvolvimento) ",
