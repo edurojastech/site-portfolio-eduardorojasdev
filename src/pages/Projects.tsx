@@ -16,6 +16,7 @@ import plataformaCursos from "@/assets/plataforma-cursos.png";
 import fitmakerImg from "@/assets/projects/fitmaker.png";
 import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
+import moviesImg from "@/assets/projects/movieswefit.png";
 
 const projects = [
   {
@@ -80,6 +81,15 @@ const projects = [
     image: lokiImg,
     github: null,
     live: "https://loki-page.netlify.app/",
+  },
+  {
+    title: "WeMovie E-commerce",
+    description:
+      "Simulador de página de compra de filmes: catálogo, seleção de títulos, carrinho e fluxo de checkout completo, com interface responsiva e experiência de e-commerce.",
+    tech: ["React", "JavaScript", "E-commerce", "UX"],
+    image: moviesImg,
+    github: null,
+    live: "https://movieswefit.netlify.app/",
   },
   {
     title: "LP Positivus (Em desenvolvimento) ",
