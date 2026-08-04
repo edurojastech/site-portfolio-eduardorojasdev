@@ -92,7 +92,57 @@ const projects = [
   },
 ];
 
+type Project = (typeof projects)[number];
+
+const ProjectCard = ({ project }: { project: Project }) => (
+  <div className="group h-full flex flex-col rounded-xl overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500">
+    <div className="relative overflow-hidden h-48">
+      <img
+        src={project.image}
+        alt={`Print do projeto ${project.title}`}
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+    </div>
+    <div className="p-5 flex flex-col flex-1">
+      <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+        {project.title}
+      </h3>
+      <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
+        {project.description}
+      </p>
+      <div className="flex flex-wrap gap-1.5 mb-4">
+        {project.tech.map((t) => (
+          <span
+            key={t}
+            className="text-xs font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+      <div className="flex gap-3 mt-auto">
+        {project.github && (
+          <Button size="sm" variant="outline" asChild>
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              <Github size={16} /> Código
+            </a>
+          </Button>
+        )}
+        <Button size="sm" asChild>
+          <a href={project.live} target="_blank" rel="noopener noreferrer">
+            <ExternalLink size={16} /> Demo
+          </a>
+        </Button>
+      </div>
+    </div>
+  </div>
+);
+
 const Projects = () => {
+  const [view, setView] = useState<"grid" | "carousel">("grid");
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <AnimatedBackground />
@@ -122,67 +172,71 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group rounded-xl overflow-hidden bg-card border border-border hover:border-primary/30 transition-all duration-500"
+        <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
+          <span className="font-mono-code text-xs text-muted-foreground">
+            {projects.length} projetos
+          </span>
+          <ToggleGroup
+            type="single"
+            value={view}
+            onValueChange={(v) => v && setView(v as "grid" | "carousel")}
+            className="bg-card border border-border rounded-full p-1 gap-1"
+          >
+            <ToggleGroupItem
+              value="grid"
+              aria-label="Visualizar em cards"
+              className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
             >
-              <div className="relative overflow-hidden h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed line-clamp-3">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {project.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs font-mono-code px-2 py-0.5 rounded-full bg-primary/10 text-primary"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  {project.github && (
-                    <Button size="sm" variant="outline" asChild>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github size={16} /> Código
-                      </a>
-                    </Button>
-                  )}
-                  <Button size="sm" asChild>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink size={16} /> Demo
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              <LayoutGrid size={16} /> Cards
+            </ToggleGroupItem>
+            <ToggleGroupItem
+              value="carousel"
+              aria-label="Visualizar em carrossel"
+              className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+            >
+              <GalleryHorizontal size={16} /> Carrossel
+            </ToggleGroupItem>
+          </ToggleGroup>
         </div>
+
+        {view === "grid" ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, i) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <ProjectCard project={project} />
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <Carousel opts={{ align: "start", loop: true }} className="w-full">
+              <CarouselContent className="-ml-4">
+                {projects.map((project) => (
+                  <CarouselItem
+                    key={project.title}
+                    className="pl-4 md:basis-1/2 lg:basis-1/3"
+                  >
+                    <ProjectCard project={project} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:flex -left-4" />
+              <CarouselNext className="hidden sm:flex -right-4" />
+            </Carousel>
+            <p className="text-center text-xs text-muted-foreground font-mono-code mt-6 sm:hidden">
+              arraste para o lado →
+            </p>
+          </motion.div>
+        )}
       </div>
     </div>
   );
