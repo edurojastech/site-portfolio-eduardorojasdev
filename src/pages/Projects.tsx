@@ -64,6 +64,16 @@ const projects = [
     live: "https://course-platform-dashboard.netlify.app/auth",
   },
   {
+  {
+    title: "Loki",
+    description:
+      "Landing Page temática da série Loki (Marvel Studios), com layout imersivo, hero em destaque, informações da série e chamadas para assistir e ver o trailer. Desenvolvida com HTML, CSS e JavaScript puros.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: lokiImg,
+    github: null,
+    live: "https://loki-page.netlify.app/",
+  },
+  {
     title: "LP Positivus (Em desenvolvimento) ",
     description:
       "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
