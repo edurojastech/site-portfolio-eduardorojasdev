@@ -1,6 +1,15 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowLeft } from "lucide-react";
+import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import plataformaCursos from "@/assets/plataforma-cursos.png";
