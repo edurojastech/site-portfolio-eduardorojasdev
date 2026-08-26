@@ -17,7 +17,7 @@ import fitmakerImg from "@/assets/projects/fitmaker.png";
 import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
 import moviesImg from "@/assets/projects/movieswefit.png";
-import solidaAcrediAsset from "@/assets/projects/solida-acredi.png.asset.json";
+import solidaAcrediImg from "@/assets/projects/solida-acredi.jpg";
 
 const projects = [
   {
@@ -25,7 +25,7 @@ const projects = [
     description:
       "Projeto em andamento: repaginação do site institucional, criação de página para captura de leads e construção de CRM interno para gestão de clientes e oportunidades.",
     tech: ["React", "TypeScript", "Tailwind CSS", "UX", "CRM"],
-    image: solidaAcrediAsset.url,
+    image: solidaAcrediImg,
     github: null,
     live: "https://solidacredi.com.br/",
   },
