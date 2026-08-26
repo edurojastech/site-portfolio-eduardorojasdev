@@ -29,6 +29,8 @@ const projects = [
     github: null,
     live: "https://solidacredi.com.br/",
   },
+  {
+    title: "Corretora Acelc",
     description:
       "Projeto de destaque: site institucional da Corretora Acelc com identidade visual renovada, layout moderno e totalmente responsivo, otimizado para SEO e conversão de contatos.",
     tech: ["HTML", "CSS", "JavaScript", "SEO"],
