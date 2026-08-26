@@ -62,7 +62,7 @@ const projects = [
     description:
       "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
     tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
-    image: "https://eduardorojas.com.br/imagens/studiorodovalho.webp",
+    image: studiorodovalhoImg.url,
     github: null,
     live: "https://studiorodovalho.netlify.app/",
   },
