@@ -18,6 +18,7 @@ import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
 import moviesImg from "@/assets/projects/movieswefit.png";
 import solidaAcrediImg from "@/assets/projects/solida-acredi.jpg";
+import studiorodovalhoImg from "@/assets/projects/studiorodovalho.png.asset.json";
 
 const projects = [
   {
@@ -61,7 +62,7 @@ const projects = [
     description:
       "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
     tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
-    image: "https://eduardorojas.com.br/imagens/studiorodovalho.webp",
+    image: studiorodovalhoImg.url,
     github: null,
     live: "https://studiorodovalho.netlify.app/",
   },
