@@ -86,8 +86,8 @@ const projects = [
   {
     title: "Loki",
     description:
-      "Landing Page temática da série Loki (Marvel Studios), com layout imersivo, hero em destaque, informações da série e chamadas para assistir e ver o trailer. Desenvolvida com HTML, CSS e JavaScript puros.",
-    tech: ["HTML", "CSS", "JavaScript"],
+      "Landing Page temática da série Loki (Marvel Studios), desenvolvida de forma nativa com HTML, CSS e JavaScript. Com design imersivo, hero em destaque, boas práticas de UX/UI, SEO e estratégia GEO para alcance local.",
+    tech: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "UX/UI", "SEO", "GEO"],
     image: lokiImg,
     github: null,
     live: "https://loki-page.netlify.app/",
