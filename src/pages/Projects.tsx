@@ -18,6 +18,7 @@ import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
 import moviesImg from "@/assets/projects/movieswefit.png";
 import solidaAcrediImg from "@/assets/projects/solida-acredi.jpg";
+import studiorodovalhoImg from "@/assets/projects/studiorodovalho.png.asset.json";
 
 const projects = [
   {
