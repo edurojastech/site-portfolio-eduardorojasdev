@@ -17,7 +17,7 @@ import fitmakerImg from "@/assets/projects/fitmaker.png";
 import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
 import moviesImg from "@/assets/projects/movieswefit.png";
-import solidacrediImg from "@/assets/projects/solidacredi.png";
+import solidaAcrediAsset from "@/assets/projects/solida-acredi.png.asset.json";
 
 const projects = [
   {
