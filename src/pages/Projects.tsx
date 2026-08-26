@@ -21,7 +21,14 @@ import solidacrediImg from "@/assets/projects/solidacredi.png";
 
 const projects = [
   {
-    title: "Corretora Acelc",
+    title: "Solid Acredi",
+    description:
+      "Projeto em andamento: repaginação do site institucional, criação de página para captura de leads e construção de CRM interno para gestão de clientes e oportunidades.",
+    tech: ["React", "TypeScript", "Tailwind CSS", "UX", "CRM"],
+    image: solidacrediImg,
+    github: null,
+    live: "https://solidacredi.com.br/",
+  },
     description:
       "Projeto de destaque: site institucional da Corretora Acelc com identidade visual renovada, layout moderno e totalmente responsivo, otimizado para SEO e conversão de contatos.",
     tech: ["HTML", "CSS", "JavaScript", "SEO"],
