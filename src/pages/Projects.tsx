@@ -20,6 +20,33 @@ import moviesImg from "@/assets/projects/movieswefit.png";
 
 const projects = [
   {
+    title: "Corretora Acelc",
+    description:
+      "Projeto de destaque: site institucional da Corretora Acelc com identidade visual renovada, layout moderno e totalmente responsivo, otimizado para SEO e conversão de contatos.",
+    tech: ["HTML", "CSS", "JavaScript", "SEO"],
+    image: acelcImg,
+    github: null,
+    live: "https://acelc.netlify.app/",
+  },
+  {
+    title: "Plataforma Fitness Elite",
+    description:
+      "Projeto de destaque: plataforma Fitness Elite (FitMaker) focada em treinos personalizados e experiência fitness premium, com interface moderna, responsiva e alta performance. Desenvolvida com Vue.js e Tailwind CSS.",
+    tech: ["Vue.js", "Tailwind CSS", "Performance", "UX"],
+    image: fitmakerImg,
+    github: null,
+    live: "https://lp-fitmaker.netlify.app/",
+  },
+  {
+    title: "Agência SitesVeloz",
+    description:
+      "Site de agência digital especializada em criação de sites para empresas e profissionais que buscam uma presença no digital.",
+    tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
+    image: "https://eduardorojas.com.br/imagens/sitesveloz.webp",
+    github: null,
+    live: "https://sitesveloz.com.br/",
+  },
+  {
     title: "Studio Rodovalho",
     description:
       "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
@@ -36,33 +63,6 @@ const projects = [
     image: "https://eduardorojas.com.br/imagens/lp-jazz-school.webp",
     github: "https://github.com/edurojastech/jazz-school",
     live: "https://jazz-school-lp.netlify.app",
-  },
-  {
-    title: "Agência SitesVeloz",
-    description:
-      "Site de agência digital especializada em criação de sites para empresas e profissionais que buscam uma presença no digital.",
-    tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
-    image: "https://eduardorojas.com.br/imagens/sitesveloz.webp",
-    github: null,
-    live: "https://sitesveloz.com.br/",
-  },
-  {
-    title: "Plataforma Fitness Elite",
-    description:
-      "Projeto de destaque: plataforma Fitness Elite (FitMaker) focada em treinos personalizados e experiência fitness premium, com interface moderna, responsiva e alta performance. Desenvolvida com Vue.js e Tailwind CSS.",
-    tech: ["Vue.js", "Tailwind CSS", "Performance", "UX"],
-    image: fitmakerImg,
-    github: null,
-    live: "https://lp-fitmaker.netlify.app/",
-  },
-  {
-    title: "Corretora Acelc",
-    description:
-      "Projeto de destaque: site institucional da Corretora Acelc com identidade visual renovada, layout moderno e totalmente responsivo, otimizado para SEO e conversão de contatos.",
-    tech: ["HTML", "CSS", "JavaScript", "SEO"],
-    image: acelcImg,
-    github: null,
-    live: "https://acelc.netlify.app/",
   },
   {
     title: "CyberCollege",
@@ -90,15 +90,6 @@ const projects = [
     image: moviesImg,
     github: null,
     live: "https://movieswefit.netlify.app/",
-  },
-  {
-    title: "LP Positivus (Em desenvolvimento) ",
-    description:
-      "Landing Page para uma agência de marketing digital que ajuda empresas a crescer e ter sucesso online.",
-    tech: ["Bootstrap", "Javascript", "HTML", "CSS "],
-    image: "https://eduardorojas.com.br/imagens/positivus.webp",
-    github: "https://github.com/edurojastech/LandingPage_Positivus",
-    live: "https://site-positivus.netlify.app/",
   },
 ];
 
