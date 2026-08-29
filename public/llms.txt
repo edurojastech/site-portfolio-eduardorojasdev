@@ -14,7 +14,7 @@ Eduardo Rojas é um desenvolvedor frontend especializado em React, Next.js, Vue.
 
 - E-mail: edurojas.developer@gmail.com
 - GitHub: https://github.com/edurojastech
-- LinkedIn: https://www.linkedin.com/in/edurojastech
+- LinkedIn: https://www.linkedin.com/in/eduardorojastech
 
 ## Observações
 

@@ -5,9 +5,6 @@ import heroPhoto from "@/assets/hero-photo.png";
 
 const CV_URL = "/cv";
 
-
-
-
 const HeroSection = () => (
   <section
     id="hero"
@@ -67,7 +64,6 @@ const HeroSection = () => (
         </Button>
       </motion.div>
 
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -82,7 +78,7 @@ const HeroSection = () => (
           },
           {
             icon: Linkedin,
-            href: "https://www.linkedin.com/in/edurojastech",
+            href: "https://www.linkedin.com/in/eduardorojastech",
             label: "LinkedIn",
           },
           {
