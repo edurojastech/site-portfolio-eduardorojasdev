@@ -25,7 +25,7 @@ A interface foi construída com foco em **performance, responsividade, acessibil
 [![TypeScript](https://skillicons.dev/icons?i=typescript)](https://www.typescriptlang.org/)
 [![Vite](https://skillicons.dev/icons?i=vite)](https://vite.dev/)
 [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
-[![shadcn/ui](https://skillicons.dev/icons?i=)](https://ui.shadcn.com/)
+<img src="https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/www/public/og.jpg" height="48" alt="shadcn/ui">
 [![HTML5](https://skillicons.dev/icons?i=html)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://skillicons.dev/icons?i=css)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Git](https://skillicons.dev/icons?i=git)](https://git-scm.com/)
