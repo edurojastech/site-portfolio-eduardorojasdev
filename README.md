@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+# Eduardo Rojas | Portfólio
 
-## Project info
+![Portfolio Preview](https://img.shields.io/badge/Portfolio-Eduardo%20Rojas-111827?style=for-the-badge)
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Portfólio pessoal desenvolvido para apresentar minha experiência, projetos, tecnologias e atuação como **Front-End Developer**.
 
-## How can I edit this code?
+O projeto reúne meus principais trabalhos e experiências profissionais, com foco em desenvolvimento web moderno, performance, acessibilidade, SEO e boas práticas de engenharia de software.
 
-There are several ways of editing your application.
+## 🚀 Sobre o projeto
 
-**Use Lovable**
+Este portfólio foi desenvolvido para funcionar como uma apresentação profissional da minha trajetória como desenvolvedor, reunindo:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+* Experiência profissional
+* Projetos e cases
+* Tecnologias e ferramentas
+* Habilidades técnicas
+* Informações de contato
+* Links para redes profissionais
 
-Changes made via Lovable will be committed automatically to this repo.
+A interface foi construída com foco em **performance, responsividade, acessibilidade e experiência do usuário**.
 
-**Use your preferred IDE**
+## 🛠️ Tecnologias
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* **React**
+* **TypeScript**
+* **Vite**
+* **Tailwind CSS**
+* **shadcn/ui**
+* **HTML5**
+* **CSS3**
+* **Git & GitHub**
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Estrutura
 
-Follow these steps:
+```text
+src/
+├── components/
+├── pages/
+├── assets/
+├── hooks/
+├── lib/
+├── App.tsx
+└── main.tsx
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+A estrutura foi organizada buscando manter os componentes reutilizáveis e facilitar a evolução e manutenção do projeto.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 💻 Executando localmente
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Pré-requisitos
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+* Node.js
+* npm
+
+### Instalação
+
+Clone o repositório:
+
+```bash
+git clone <REPOSITORY_URL>
+```
+
+Entre no diretório:
+
+```bash
+cd <PROJECT_NAME>
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto em ambiente de desenvolvimento:
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+O projeto estará disponível no endereço informado pelo Vite no terminal.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Build de produção
 
-**Use GitHub Codespaces**
+Para gerar a versão de produção:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+Para visualizar o build localmente:
 
-This project is built with:
+```bash
+npm run preview
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎯 Objetivos técnicos
 
-## How can I deploy this project?
+O projeto busca aplicar alguns princípios importantes no desenvolvimento moderno de aplicações web:
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+* Componentização e reutilização
+* TypeScript para maior segurança no desenvolvimento
+* Design responsivo
+* Acessibilidade
+* SEO técnico
+* Performance Web
+* Boas práticas de UI/UX
+* Código organizado e sustentável
 
-## Can I connect a custom domain to my Lovable project?
+## 🌐 Portfólio
 
-Yes, you can!
+**Website:**
+https://dev.eduardorojas.com.br/
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**LinkedIn:**
+https://www.linkedin.com/in/edurojastech/
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 👨‍💻 Sobre mim
+
+Sou **Front-End Developer** com mais de 6 anos de experiência no desenvolvimento de aplicações, sites, landing pages e soluções web.
+
+Tenho experiência principalmente com:
+
+**JavaScript · TypeScript · Vue.js · Nuxt.js · React · Next.js · Node.js · Tailwind CSS**
+
+Também atuo com temas relacionados a **SEO, performance, acessibilidade, integrações com APIs e desenvolvimento orientado à experiência do usuário**.
+
+---
+
+⭐ Se este projeto foi útil ou interessante para você, considere deixar uma estrela no repositório.
