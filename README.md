@@ -30,6 +30,9 @@ A interface foi construída com foco em **performance, responsividade, acessibil
 [![CSS3](https://skillicons.dev/icons?i=css)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![Git](https://skillicons.dev/icons?i=git)](https://git-scm.com/)
 [![GitHub](https://skillicons.dev/icons?i=github)](https://github.com/)
+[![Bun](https://skillicons.dev/icons?i=bun)](https://bun.sh/)
+[![Claude](https://skillicons.dev/icons?i=claude)](https://claude.ai/)
+[![Lovable](https://skillicons.dev/icons?i=lovable)](https://lovable.dev/)
 
 ## 📁 Estrutura
 
