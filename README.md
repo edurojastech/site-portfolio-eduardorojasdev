@@ -21,14 +21,15 @@ A interface foi construída com foco em **performance, responsividade, acessibil
 
 ## 🛠️ Tecnologias
 
-* **React**
-* **TypeScript**
-* **Vite**
-* **Tailwind CSS**
-* **shadcn/ui**
-* **HTML5**
-* **CSS3**
-* **Git & GitHub**
+[![React](https://skillicons.dev/icons?i=react)](https://react.dev/)
+[![TypeScript](https://skillicons.dev/icons?i=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://skillicons.dev/icons?i=vite)](https://vite.dev/)
+[![Tailwind CSS](https://skillicons.dev/icons?i=tailwind)](https://tailwindcss.com/)
+[![shadcn/ui](https://skillicons.dev/icons?i=)](https://ui.shadcn.com/)
+[![HTML5](https://skillicons.dev/icons?i=html)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://skillicons.dev/icons?i=css)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Git](https://skillicons.dev/icons?i=git)](https://git-scm.com/)
+[![GitHub](https://skillicons.dev/icons?i=github)](https://github.com/)
 
 ## 📁 Estrutura
 
