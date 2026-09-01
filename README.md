@@ -31,8 +31,9 @@ A interface foi construída com foco em **performance, responsividade, acessibil
 [![Git](https://skillicons.dev/icons?i=git)](https://git-scm.com/)
 [![GitHub](https://skillicons.dev/icons?i=github)](https://github.com/)
 [![Bun](https://skillicons.dev/icons?i=bun)](https://bun.sh/)
-[![Claude](https://skillicons.dev/icons?i=claude)](https://claude.ai/)
-[![Lovable](https://skillicons.dev/icons?i=lovable)](https://lovable.dev/)
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9H5PKP92Yfq_I7EfmMC-yBD8dt0rpXFLHRlJ8FLLNg&s" height="48" alt="shadcn/ui">
+<img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/lovable.webp" height="48" alt="shadcn/ui">
+
 
 ## 📁 Estrutura
 
