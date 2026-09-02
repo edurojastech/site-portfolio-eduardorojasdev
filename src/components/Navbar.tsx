@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logoEdu from "@/assets/logoEdu.svg";
-import logoEduLight from "@/assets/logoEduLight.svg";
-import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
   { label: "Início", href: "#hero" },
