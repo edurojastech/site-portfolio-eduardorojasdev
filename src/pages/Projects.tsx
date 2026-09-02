@@ -318,7 +318,7 @@ const Projects = () => {
                   className="mt-4"
                   onClick={() => setFilter("Todos")}
                 >
-                  <X size={14} className="mr-1.5" /> Limpar filtro
+                  <RotateCcw size={14} className="mr-1.5" /> Limpar filtro
                 </Button>
               </div>
             )}
