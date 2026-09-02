@@ -18,7 +18,9 @@ import acelcImg from "@/assets/projects/acelc.png";
 import lokiImg from "@/assets/projects/loki.png";
 import moviesImg from "@/assets/projects/movieswefit.png";
 import solidaAcrediImg from "@/assets/projects/solida-acredi.jpg";
-import studiorodovalhoImg from "@/assets/projects/studiorodovalho.png.asset.json";
+import studioImg from "@/assets/projects/studio.jpg";
+import sitesvelozImg from "@/assets/projects/sitesveloz.jpg";
+import jazzImg from "@/assets/projects/jazz.jpg";
 
 const projects = [
   {
@@ -53,7 +55,7 @@ const projects = [
     description:
       "Site de agência digital especializada em criação de sites para empresas e profissionais que buscam uma presença no digital.",
     tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
-    image: "https://eduardorojas.com.br/imagens/sitesveloz.webp",
+    image: sitesvelozImg,
     github: null,
     live: "https://sitesveloz.com.br/",
   },
@@ -62,7 +64,7 @@ const projects = [
     description:
       "Site de Studio Fitness, para pessoas que desejam um espaço reservado de treino de musculação e consultoria.",
     tech: ["Bootstrap", "JavaScript", "HTML", "SEO"],
-    image: studiorodovalhoImg.url,
+    image: studioImg,
     github: null,
     live: "https://studiorodovalho.netlify.app/",
   },
@@ -71,7 +73,7 @@ const projects = [
     description:
       "Landing Page para divulgação de uma escola de Jazz, layout desenvolvido para escola de programação OneBitCode.",
     tech: ["JavaScript", "HTML", "CSS"],
-    image: "https://eduardorojas.com.br/imagens/lp-jazz-school.webp",
+    image: jazzImg,
     github: "https://github.com/edurojastech/jazz-school",
     live: "https://jazz-school-lp.netlify.app",
   },
