@@ -63,13 +63,6 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <button
-            onClick={toggleTheme}
-            aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
         </div>
 
         {/* Mobile toggle */}
