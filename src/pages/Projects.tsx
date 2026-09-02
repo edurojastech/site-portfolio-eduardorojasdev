@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal } from "lucide-react";
+import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
