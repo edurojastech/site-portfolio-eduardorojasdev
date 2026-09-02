@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal } from "lucide-react";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
@@ -156,6 +156,25 @@ const ProjectCard = ({ project }: { project: Project }) => (
 
 const Projects = () => {
   const [view, setView] = useState<"grid" | "carousel">("grid");
+  const [filter, setFilter] = useState<string>("Todos");
+
+  const allTechnologies = useMemo(
+    () =>
+      Array.from(new Set(projects.flatMap((p) => p.tech))).sort((a, b) =>
+        a.localeCompare(b, "pt-BR")
+      ),
+    []
+  );
+
+  const filteredProjects = useMemo(
+    () =>
+      filter === "Todos"
+        ? projects
+        : projects.filter((p) => p.tech.includes(filter)),
+    [filter]
+  );
+
+  const filters = ["Todos", ...allTechnologies];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -186,71 +205,123 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        <div className="flex items-center justify-between gap-4 mb-8 flex-wrap">
-          <span className="font-mono-code text-xs text-muted-foreground">
-            {projects.length} projetos
-          </span>
-          <ToggleGroup
-            type="single"
-            value={view}
-            onValueChange={(v) => v && setView(v as "grid" | "carousel")}
-            className="bg-card border border-border rounded-full p-1 gap-1"
-          >
-            <ToggleGroupItem
-              value="grid"
-              aria-label="Visualizar em cards"
-              className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+        <div className="flex flex-col gap-6 mb-8">
+          <div className="flex items-center justify-between gap-4 flex-wrap">
+            <span className="font-mono-code text-xs text-muted-foreground">
+              {filteredProjects.length} {filteredProjects.length === 1 ? "projeto" : "projetos"}
+              {filter !== "Todos" && ` em "${filter}"`}
+            </span>
+            <ToggleGroup
+              type="single"
+              value={view}
+              onValueChange={(v) => v && setView(v as "grid" | "carousel")}
+              className="bg-card border border-border rounded-full p-1 gap-1"
             >
-              <LayoutGrid size={16} /> Cards
-            </ToggleGroupItem>
-            <ToggleGroupItem
-              value="carousel"
-              aria-label="Visualizar em carrossel"
-              className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
-            >
-              <GalleryHorizontal size={16} /> Carrossel
-            </ToggleGroupItem>
-          </ToggleGroup>
+              <ToggleGroupItem
+                value="grid"
+                aria-label="Visualizar em cards"
+                className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+              >
+                <LayoutGrid size={16} /> Cards
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="carousel"
+                aria-label="Visualizar em carrossel"
+                className="rounded-full px-4 gap-2 data-[state=on]:bg-primary data-[state=on]:text-primary-foreground"
+              >
+                <GalleryHorizontal size={16} /> Carrossel
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {filters.map((tech) => {
+              const isActive = filter === tech;
+              return (
+                <button
+                  key={tech}
+                  onClick={() => setFilter(tech)}
+                  className={`text-xs font-mono-code px-3 py-1.5 rounded-full border transition-all duration-300 flex items-center gap-1.5 ${
+                    isActive
+                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsl(var(--primary)/0.35)]"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
+                  }`}
+                  aria-pressed={isActive}
+                >
+                  {tech}
+                  {isActive && tech !== "Todos" && (
+                    <X size={12} className="opacity-80" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {view === "grid" ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, i) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </div>
-        ) : (
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
+            key={`${view}-${filter}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
           >
-            <Carousel opts={{ align: "start", loop: true }} className="w-full">
-              <CarouselContent className="-ml-4">
-                {projects.map((project) => (
-                  <CarouselItem
+            {view === "grid" ? (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProjects.map((project, i) => (
+                  <motion.div
                     key={project.title}
-                    className="pl-4 md:basis-1/2 lg:basis-1/3"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.08 }}
                   >
                     <ProjectCard project={project} />
-                  </CarouselItem>
+                  </motion.div>
                 ))}
-              </CarouselContent>
-              <CarouselPrevious className="hidden sm:flex -left-4" />
-              <CarouselNext className="hidden sm:flex -right-4" />
-            </Carousel>
-            <p className="text-center text-xs text-muted-foreground font-mono-code mt-6 sm:hidden">
-              arraste para o lado →
-            </p>
+              </div>
+            ) : (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Carousel opts={{ align: "start", loop: filteredProjects.length > 3 }} className="w-full">
+                  <CarouselContent className="-ml-4">
+                    {filteredProjects.map((project) => (
+                      <CarouselItem
+                        key={project.title}
+                        className="pl-4 md:basis-1/2 lg:basis-1/3"
+                      >
+                        <ProjectCard project={project} />
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="hidden sm:flex -left-4" />
+                  <CarouselNext className="hidden sm:flex -right-4" />
+                </Carousel>
+                <p className="text-center text-xs text-muted-foreground font-mono-code mt-6 sm:hidden">
+                  arraste para o lado →
+                </p>
+              </motion.div>
+            )}
+
+            {filteredProjects.length === 0 && (
+              <div className="text-center py-20">
+                <p className="text-muted-foreground font-mono-code">
+                  Nenhum projeto encontrado com a tecnologia <span className="text-primary">{filter}</span>.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-4"
+                  onClick={() => setFilter("Todos")}
+                >
+                  <X size={14} className="mr-1.5" /> Limpar filtro
+                </Button>
+              </div>
+            )}
           </motion.div>
-        )}
+        </AnimatePresence>
       </div>
     </div>
   );
