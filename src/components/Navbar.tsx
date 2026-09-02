@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#hero">
           <img
-            src={theme === "light" ? logoEduLight : logoEdu}
+            src={logoEdu}
             alt="Eduardo Rojas"
             className="h-8"
           />
