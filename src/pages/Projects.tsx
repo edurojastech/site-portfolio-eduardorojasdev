@@ -1,8 +1,15 @@
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal, X } from "lucide-react";
+import { ExternalLink, Github, ArrowLeft, LayoutGrid, GalleryHorizontal, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Carousel,
   CarouselContent,
@@ -234,27 +241,22 @@ const Projects = () => {
             </ToggleGroup>
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {filters.map((tech) => {
-              const isActive = filter === tech;
-              return (
-                <button
-                  key={tech}
-                  onClick={() => setFilter(tech)}
-                  className={`text-xs font-mono-code px-3 py-1.5 rounded-full border transition-all duration-300 flex items-center gap-1.5 ${
-                    isActive
-                      ? "bg-primary text-primary-foreground border-primary shadow-[0_0_12px_hsl(var(--primary)/0.35)]"
-                      : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
-                  }`}
-                  aria-pressed={isActive}
-                >
-                  {tech}
-                  {isActive && tech !== "Todos" && (
-                    <X size={12} className="opacity-80" />
-                  )}
-                </button>
-              );
-            })}
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="text-sm text-muted-foreground font-mono-code">
+              Filtrar por tecnologia:
+            </span>
+            <Select value={filter} onValueChange={setFilter}>
+              <SelectTrigger className="w-[220px] font-mono-code bg-card border-border hover:border-primary/40 transition-colors">
+                <SelectValue placeholder="Selecione uma tecnologia" />
+              </SelectTrigger>
+              <SelectContent>
+                {filters.map((tech) => (
+                  <SelectItem key={tech} value={tech} className="font-mono-code">
+                    {tech}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
           </div>
         </div>
 
@@ -316,7 +318,7 @@ const Projects = () => {
                   className="mt-4"
                   onClick={() => setFilter("Todos")}
                 >
-                  <X size={14} className="mr-1.5" /> Limpar filtro
+                  <RotateCcw size={14} className="mr-1.5" /> Limpar filtro
                 </Button>
               </div>
             )}
