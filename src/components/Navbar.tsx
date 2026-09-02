@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import logoEdu from "@/assets/logoEdu.svg";
-import logoEduLight from "@/assets/logoEduLight.svg";
-import { useTheme } from "@/hooks/use-theme";
 
 const navItems = [
   { label: "Início", href: "#hero" },
@@ -17,7 +15,6 @@ const navItems = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -39,7 +36,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#hero">
           <img
-            src={theme === "light" ? logoEduLight : logoEdu}
+            src={logoEdu}
             alt="Eduardo Rojas"
             className="h-8"
           />
@@ -66,24 +63,10 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <button
-            onClick={toggleTheme}
-            aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
         </div>
 
         {/* Mobile toggle */}
         <div className="md:hidden flex items-center gap-3">
-          <button
-            onClick={toggleTheme}
-            aria-label={theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"}
-            className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-foreground hover:border-primary hover:text-primary transition-colors"
-          >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
           <button
             className="text-foreground"
             onClick={() => setOpen(!open)}
