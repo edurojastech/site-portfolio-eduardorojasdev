@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Eye, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroPhoto from "@/assets/hero-photo.png";
+import heroPhoto from "@/assets/hero-photo.webp";
 
 const CV_URL = "/cv";
 
@@ -20,8 +20,13 @@ const HeroSection = () => (
         <div className="w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
           <img
             src={heroPhoto}
-            alt="Eduardo Rojas"
+            alt="Eduardo Rojas, desenvolvedor frontend"
             className="w-full h-full object-cover"
+            width={512}
+            height={512}
+            decoding="async"
+            /* React 18 só repassa `fetchpriority` em minúsculas ao DOM. */
+            {...{ fetchpriority: "high" }}
           />
         </div>
         <span className="font-mono-code text-primary text-sm md:text-base tracking-widest">
@@ -36,6 +41,9 @@ const HeroSection = () => (
         className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
       >
         Eduardo <span className="text-gradient">Rojas</span>
+        <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mt-3">
+          Desenvolvedor Frontend
+        </span>
       </motion.h1>
 
       <motion.p
@@ -44,8 +52,9 @@ const HeroSection = () => (
         transition={{ duration: 0.8, delay: 0.4 }}
         className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
       >
-        Desenvolvedor Frontend apaixonado por criar experiências digitais
-        incríveis, performáticas e acessíveis.
+        Mais de 6 anos criando sites, landing pages e aplicações web
+        performáticas e acessíveis em React, Next.js e Vue — para empresas em
+        Uberlândia e todo o Brasil.
       </motion.p>
 
       <motion.div

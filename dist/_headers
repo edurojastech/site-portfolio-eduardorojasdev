@@ -1,0 +1,9 @@
+# Mockup de cliente não linkado. Fica acessível por link direto, mas fora
+# do índice de busca. Note que ele NÃO é bloqueado no robots.txt de propósito:
+# o rastreador precisa poder ler este cabeçalho para respeitar o noindex.
+/figoarte/*
+  X-Robots-Tag: noindex, nofollow
+
+# Assets com hash no nome — imutáveis.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

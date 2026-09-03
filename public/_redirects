@@ -1,1 +1,7 @@
-/*    /index.html   200
+# Rotas reais são geradas como arquivos estáticos pelo prerender
+# (dist/index.html, dist/projetos/index.html, dist/cv/index.html) e o Netlify
+# as serve antes de consultar esta regra.
+#
+# Qualquer outro caminho recebe um 404 de verdade, em vez do HTTP 200 que a
+# regra SPA anterior devolvia para toda URL inexistente.
+/*    /404.html   404

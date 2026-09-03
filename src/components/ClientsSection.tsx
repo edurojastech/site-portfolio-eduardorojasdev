@@ -9,7 +9,7 @@ import teclatLogo from "@/assets/clients/teclat.webp";
 import woliLogo from "@/assets/clients/woli.svg";
 import wisebyteLogo from "@/assets/clients/wisebyte.svg";
 import dulinoLogo from "@/assets/clients/dulino.svg";
-import gorillasLogo from "@/assets/clients/gorillas.png";
+import gorillasLogo from "@/assets/clients/gorillas.webp";
 import { link } from "fs";
 
 const clients = [

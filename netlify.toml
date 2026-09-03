@@ -1,0 +1,10 @@
+# Torna o build explícito: antes, sem este arquivo, dependia da configuração
+# no painel do Netlify — e a pasta dist/ versionada deixava ambíguo se o site
+# era construído ou apenas publicado como estava.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

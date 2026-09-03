@@ -6,9 +6,9 @@ Eduardo Rojas é um desenvolvedor frontend especializado em React, Next.js, Vue.
 
 ## Páginas
 
-- [Home](https://eduardorojas.com.br/): Apresentação, sobre, skills, experiência, clientes e contato.
-- [Projetos](https://eduardorojas.com.br/projetos): Lista de projetos desenvolvidos.
-- [Currículo](https://eduardorojas.com.br/cv): Currículo em PDF.
+- [Home](https://dev.eduardorojas.com.br/): Apresentação, sobre, skills, experiência, clientes e contato.
+- [Projetos](https://dev.eduardorojas.com.br/projetos): Lista de projetos desenvolvidos.
+- [Currículo](https://dev.eduardorojas.com.br/cv): Currículo em PDF.
 
 ## Contato
 
