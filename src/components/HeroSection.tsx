@@ -117,9 +117,10 @@ const HeroSection = () => (
       >
         <a
           href="#about"
+          aria-label="Ir para a seção Sobre mim"
           className="text-muted-foreground hover:text-primary transition-colors animate-bounce block"
         >
-          <ArrowDown size={24} />
+          <ArrowDown size={24} aria-hidden="true" />
         </a>
       </motion.div>
     </div>

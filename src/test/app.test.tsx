@@ -78,3 +78,27 @@ describe("tags de head em runtime", () => {
     expect(robots).toContain("noindex");
   });
 });
+
+describe("acessibilidade dos controles", () => {
+  // Lighthouse ("Buttons/Links must have discernible text") reprovava o botão
+  // do menu mobile e a seta do hero: ambos só continham ícone. Agentes de IA e
+  // leitores de tela dependem desse nome para navegar.
+  //
+  // Usa o mesmo algoritmo de nome acessível que o Lighthouse: um link que
+  // envolve <img alt="..."> É nomeado pelo alt — não basta olhar textContent.
+  it.each(["/", "/projetos", "/cv"])(
+    "todo botão e link tem nome acessível em %s",
+    (path) => {
+      renderAt(path);
+      const controles = [
+        ...screen.queryAllByRole("button"),
+        ...screen.queryAllByRole("link"),
+      ];
+      expect(controles.length).toBeGreaterThan(0);
+      for (const el of controles) {
+        // toHaveAccessibleName usa o mesmo algoritmo do Lighthouse
+        expect(el, el.outerHTML.slice(0, 120)).toHaveAccessibleName();
+      }
+    },
+  );
+});

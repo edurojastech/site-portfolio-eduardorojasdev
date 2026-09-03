@@ -70,8 +70,15 @@ const Navbar = () => {
           <button
             className="text-foreground"
             onClick={() => setOpen(!open)}
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? (
+              <X size={24} aria-hidden="true" />
+            ) : (
+              <Menu size={24} aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
@@ -79,6 +86,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {open && (
         <motion.div
+          id="menu-mobile"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
