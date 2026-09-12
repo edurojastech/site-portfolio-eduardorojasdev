@@ -7,6 +7,7 @@ import solidaAcrediImg from "@/assets/projects/solida-acredi.webp";
 import studioImg from "@/assets/projects/studio.webp";
 import sitesvelozImg from "@/assets/projects/sitesveloz.webp";
 import jazzImg from "@/assets/projects/jazz.webp";
+import atendeIaImg from "@/assets/projects/atende-ia.webp";
 
 /**
  * Fonte única dos projetos, usada pela página /projetos e pela seção de
@@ -23,6 +24,23 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Atende IA",
+    description:
+      "Plataforma de atendimento automatizado com IA no WhatsApp: conversa, qualifica leads, agenda compromissos e acompanha clientes com uma IA treinada para cada negócio, integrada ao Google Calendar. Frontend em React com Tailwind CSS e Radix UI, backend em Supabase e Evolution API rodando em Docker.",
+    tech: [
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "Supabase",
+      "Evolution API",
+      "Docker",
+      "IA",
+    ],
+    image: atendeIaImg,
+    github: null,
+    live: "https://atendimento-com-ia.netlify.app/",
+  },
   {
     title: "Solid Acredi",
     description:
