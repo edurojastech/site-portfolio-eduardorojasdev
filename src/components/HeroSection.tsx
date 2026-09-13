@@ -8,16 +8,16 @@ const CV_URL = "/cv";
 const HeroSection = () => (
   <section
     id="hero"
-    className="relative min-h-screen flex items-center justify-center px-6"
+    className="hero-section relative min-h-screen min-h-[100svh] flex items-center justify-center px-6 py-24"
   >
-    <div className="max-w-4xl mx-auto text-center relative z-10">
+    <div className="hero-content max-w-4xl mx-auto text-center relative z-10">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-6 flex flex-col items-center gap-4"
+        className="hero-intro mb-6 flex flex-col items-center gap-4"
       >
-        <div className="w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
+        <div className="hero-avatar w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
           <img
             src={heroPhoto}
             alt="Eduardo Rojas, desenvolvedor frontend"
@@ -38,7 +38,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
+        className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
       >
         Eduardo <span className="text-gradient">Rojas</span>
         <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mt-3">
@@ -50,7 +50,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
+        className="hero-description text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
       >
         Mais de 6 anos criando sites, landing pages e aplicações web
         performáticas e acessíveis em React, Next.js e Vue — para empresas em
@@ -61,7 +61,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="flex items-center justify-center gap-4 mb-12"
+        className="hero-actions flex items-center justify-center gap-4 mb-12"
       >
         <Button size="lg" className="glow-primary font-semibold" asChild>
           <a href="/projetos">Ver Projetos</a>
@@ -77,7 +77,7 @@ const HeroSection = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="flex items-center justify-center gap-6"
+        className="hero-socials flex items-center justify-center gap-6"
       >
         {[
           {
@@ -109,21 +109,18 @@ const HeroSection = () => (
         ))}
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <a
-          href="#about"
-          aria-label="Ir para a seção Sobre mim"
-          className="text-muted-foreground hover:text-primary transition-colors animate-bounce block"
-        >
-          <ArrowDown size={24} aria-hidden="true" />
-        </a>
-      </motion.div>
     </div>
+
+    <motion.a
+      href="#about"
+      aria-label="Ir para a seção Sobre mim"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.2 }}
+      className="hero-scroll absolute bottom-5 left-1/2 z-10 -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+    >
+      <ArrowDown size={24} aria-hidden="true" />
+    </motion.a>
   </section>
 );
 
