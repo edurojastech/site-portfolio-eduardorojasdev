@@ -66,6 +66,9 @@ const headFor = (route) => {
     `<meta name="twitter:description" content="${desc}" />`,
     `<meta name="twitter:image" content="${OG_IMAGE}" />`,
   ];
+  if (route.keywords) {
+    tags.splice(2, 0, `<meta name="keywords" content="${escape(route.keywords)}" />`);
+  }
   if (route.noindex) tags.push(`<meta name="robots" content="noindex, follow" />`);
   return tags.map((t) => `    ${t}`).join("\n");
 };

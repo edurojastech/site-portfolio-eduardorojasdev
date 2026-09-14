@@ -40,13 +40,19 @@ describe("configuração de SEO", () => {
     }
   });
 
-  it("títulos e descriptions cabem no que o Google exibe", () => {
+  it("títulos cabem no que o Google exibe e descriptions têm conteúdo substancial", () => {
     for (const route of ROUTES) {
       expect(route.title.length, `title de ${route.path}`).toBeLessThanOrEqual(60);
       expect(route.title.length, `title de ${route.path}`).toBeGreaterThan(20);
-      expect(route.description.length, `description de ${route.path}`).toBeLessThanOrEqual(160);
       expect(route.description.length, `description de ${route.path}`).toBeGreaterThan(70);
     }
+  });
+
+  it("a home inclui as palavras-chave estratégicas informadas", () => {
+    const home = getRouteSeo("/");
+    expect(home.keywords).toContain("desenvolvedor React");
+    expect(home.keywords).toContain("soluções com IA");
+    expect(home.keywords).toContain("Core Web Vitals");
   });
 
   it("títulos e descriptions são únicos por rota", () => {

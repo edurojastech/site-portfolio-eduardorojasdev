@@ -18,6 +18,8 @@ export interface RouteSeo {
   path: string;
   title: string;
   description: string;
+  /** Palavras-chave específicas da rota. */
+  keywords?: string;
   /** Caminho canônico. Padrão: o próprio `path`. */
   canonical?: string;
   /** og:type — "website" para páginas comuns, "profile" para a home. */
@@ -29,9 +31,11 @@ export interface RouteSeo {
 export const ROUTES: RouteSeo[] = [
   {
     path: "/",
-    title: "Eduardo Rojas | Desenvolvedor Frontend React & Next.js",
+    title: "Eduardo Rojas | Desenvolvedor Front-End, IA & Automações",
     description:
-      "Desenvolvedor frontend com mais de 6 anos criando sites, landing pages e aplicações web em React, Next.js e Vue. Atendimento em Uberlândia e todo o Brasil.",
+      "Desenvolvedor Front-End com mais de 6 anos criando aplicações web, SaaS e landing pages de alta performance. Desenvolvimento com React, Next.js, Vue e Nuxt, além de soluções com IA e automações.",
+    keywords:
+      "Eduardo Rojas, desenvolvedor front-end, desenvolvedor frontend, desenvolvedor React, desenvolvedor Next.js, desenvolvedor Vue, desenvolvedor Nuxt, desenvolvimento web, desenvolvimento de aplicações web, aplicações web, sistemas web, SaaS, landing pages, desenvolvimento de sites, soluções com IA, inteligência artificial, automação com IA, automação de atendimento, automação WhatsApp, integração WhatsApp, TypeScript, JavaScript, Tailwind CSS, SEO, performance web, Core Web Vitals, aplicações SPA, SPA, SSR, APIs REST, GraphQL",
     ogType: "profile",
   },
   {
