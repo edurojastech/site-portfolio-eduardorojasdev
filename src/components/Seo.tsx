@@ -35,6 +35,12 @@ const Seo = () => {
     document.title = seo.title;
 
     setMeta('meta[name="description"]', "name", "description", seo.description);
+    const keywords = document.head.querySelector('meta[name="keywords"]');
+    if (seo.keywords) {
+      setMeta('meta[name="keywords"]', "name", "keywords", seo.keywords);
+    } else if (keywords) {
+      keywords.remove();
+    }
     setMeta('meta[property="og:title"]', "property", "og:title", seo.title);
     setMeta(
       'meta[property="og:description"]',
