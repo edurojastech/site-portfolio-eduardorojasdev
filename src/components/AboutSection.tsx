@@ -34,7 +34,7 @@ const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-muted-foreground max-w-3xl mx-auto text-left text-base mb-8 leading-relaxed md:text-center md:text-lg"
         >
-          Desenvolvedor Frontend com <span className="text-primary font-semibold">mais de 6 anos</span> de
+          Desenvolvedor Web com <span className="text-primary font-semibold">mais de 6 anos</span> de
           experiência criando aplicações web escaláveis, responsivas e orientadas a performance.
           Especialista no ecossistema frontend com <span className="text-primary font-semibold">Vue/Nuxt</span> e{" "}
           <span className="text-primary font-semibold">React/Next</span>, com vivência em plataformas

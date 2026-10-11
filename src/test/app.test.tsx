@@ -18,7 +18,7 @@ describe("renderização das rotas", () => {
     expect(h1).toHaveTextContent("Eduardo");
     expect(h1).toHaveTextContent("Rojas");
     // o H1 precisa carregar a função, não só o nome
-    expect(h1).toHaveTextContent("Desenvolvedor Frontend");
+    expect(h1).toHaveTextContent("Desenvolvedor Web");
   });
 
   it("a home exibe projetos reais, não os placeholders do template", () => {
@@ -45,7 +45,7 @@ describe("renderização das rotas", () => {
   it("/cv tem texto rastreável além do PDF", () => {
     renderAt("/cv");
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Eduardo");
-    expect(screen.getByText(/Desenvolvedor Frontend/i)).toBeInTheDocument();
+    expect(screen.getByText(/Desenvolvedor Web/i)).toBeInTheDocument();
   });
 
   it("rota inexistente renderiza o 404", () => {

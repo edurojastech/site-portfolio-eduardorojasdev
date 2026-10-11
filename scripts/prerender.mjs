@@ -60,7 +60,7 @@ const headFor = (route) => {
     `<meta property="og:image" content="${OG_IMAGE}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="Eduardo Rojas — Desenvolvedor Frontend" />`,
+    `<meta property="og:image:alt" content="Eduardo Rojas — Desenvolvedor Web" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${desc}" />`,

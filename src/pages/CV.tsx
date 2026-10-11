@@ -37,7 +37,7 @@ const CV = () => (
           Eduardo <span className="text-gradient">Rojas</span>
         </h1>
         <p className="text-xl text-muted-foreground mt-3">
-          Desenvolvedor Frontend · Uberlândia, MG
+          Desenvolvedor Web · Uberlândia, MG
         </p>
         <p className="text-muted-foreground mt-4 max-w-2xl">
           Mais de 6 anos de experiência no desenvolvimento de aplicações, sites,
