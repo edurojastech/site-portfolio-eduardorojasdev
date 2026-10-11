@@ -8,7 +8,7 @@ import studioImg from "@/assets/projects/studio.webp";
 import sitesvelozImg from "@/assets/projects/sitesveloz.webp";
 import jazzImg from "@/assets/projects/jazz.webp";
 import atendeIaImg from "@/assets/projects/atende-ia.webp";
-import udipromptsImg from "@/assets/projects/udiprompts.webp.asset.json";
+import udipromptsImg from "@/assets/projects/udiprompts.webp";
 
 /**
  * Fonte única dos projetos, usada pela página /projetos e pela seção de
@@ -46,8 +46,8 @@ export const projects: Project[] = [
     title: "UdiPrompts",
     description:
       "Plataforma de prompts para criação de imagens com inteligência artificial, com biblioteca organizada por categorias, busca, favoritos e geração de imagens integrada.",
-    tech: ["IA"],
-    image: udipromptsImg.url,
+    tech: ["Lovable", "Claude Code", "Supabase", "React.js", "Tailwind CSS", "Radix UI"],
+    image: udipromptsImg,
     github: null,
     live: "https://udiprompts.com.br/",
   },
