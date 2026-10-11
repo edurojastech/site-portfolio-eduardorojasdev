@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Eye, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroPhoto from "@/assets/eduardo-avatar.png.asset.json";
+import heroPhoto from "@/assets/eduardo-avatar.webp";
 
 const CV_URL = "/cv";
 
@@ -19,9 +19,9 @@ const HeroSection = () => (
       >
         <div className="hero-avatar w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
           <img
-            src={heroPhoto.url}
+            src={heroPhoto}
             alt="Eduardo Rojas, desenvolvedor web"
-            className="w-full h-full object-cover object-[center_35%]"
+            className="w-full h-full object-cover"
             width={512}
             height={512}
             decoding="async"
