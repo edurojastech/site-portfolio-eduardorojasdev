@@ -26,7 +26,7 @@ const Footer = () => (
             {"<ER />"}
           </span>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Desenvolvedor frontend em Uberlândia — sites, landing pages e
+            Desenvolvedor Web em Uberlândia — sites, landing pages e
             aplicações web.
           </p>
         </div>

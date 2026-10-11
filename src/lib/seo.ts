@@ -31,24 +31,24 @@ export interface RouteSeo {
 export const ROUTES: RouteSeo[] = [
   {
     path: "/",
-    title: "Eduardo Rojas | Desenvolvedor Front-End, IA & Automações",
+    title: "Eduardo Rojas | Desenvolvedor Web, IA & Automações",
     description:
-      "Desenvolvedor Front-End com mais de 6 anos criando aplicações web, SaaS e landing pages de alta performance. Desenvolvimento com React, Next.js, Vue e Nuxt, além de soluções com IA e automações.",
+      "Desenvolvedor Web com mais de 6 anos criando aplicações web, SaaS e landing pages de alta performance. Desenvolvimento com React, Next.js, Vue e Nuxt, além de soluções com IA e automações.",
     keywords:
-      "Eduardo Rojas, desenvolvedor front-end, desenvolvedor frontend, desenvolvedor React, desenvolvedor Next.js, desenvolvedor Vue, desenvolvedor Nuxt, desenvolvimento web, desenvolvimento de aplicações web, aplicações web, sistemas web, SaaS, landing pages, desenvolvimento de sites, soluções com IA, inteligência artificial, automação com IA, automação de atendimento, automação WhatsApp, integração WhatsApp, TypeScript, JavaScript, Tailwind CSS, SEO, performance web, Core Web Vitals, aplicações SPA, SPA, SSR, APIs REST, GraphQL",
+      "Eduardo Rojas, desenvolvedor web, desenvolvedor React, desenvolvedor Next.js, desenvolvedor Vue, desenvolvedor Nuxt, desenvolvimento web, desenvolvimento de aplicações web, aplicações web, sistemas web, SaaS, landing pages, desenvolvimento de sites, soluções com IA, inteligência artificial, automação com IA, automação de atendimento, automação WhatsApp, integração WhatsApp, TypeScript, JavaScript, Tailwind CSS, SEO, performance web, Core Web Vitals, aplicações SPA, SPA, SSR, APIs REST, GraphQL",
     ogType: "profile",
   },
   {
     path: "/projetos",
-    title: "Projetos | Eduardo Rojas — Desenvolvedor Frontend",
+    title: "Projetos | Eduardo Rojas — Desenvolvedor Web",
     description:
       "Portfólio de projetos frontend: dashboards, plataformas, landing pages e sites institucionais desenvolvidos em React, Next.js, Vue e TypeScript.",
   },
   {
     path: "/cv",
-    title: "Currículo | Eduardo Rojas — Desenvolvedor Frontend",
+    title: "Currículo | Eduardo Rojas — Desenvolvedor Web",
     description:
-      "Currículo de Eduardo Rojas, desenvolvedor frontend com mais de 6 anos de experiência em React, Next.js, Vue, TypeScript, Node.js e Tailwind CSS.",
+      "Currículo de Eduardo Rojas, desenvolvedor web com mais de 6 anos de experiência em React, Next.js, Vue, TypeScript, Node.js e Tailwind CSS.",
   },
 ];
 
