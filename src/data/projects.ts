@@ -8,6 +8,7 @@ import studioImg from "@/assets/projects/studio.webp";
 import sitesvelozImg from "@/assets/projects/sitesveloz.webp";
 import jazzImg from "@/assets/projects/jazz.webp";
 import atendeIaImg from "@/assets/projects/atende-ia.webp";
+import udipromptsImg from "@/assets/projects/udiprompts.webp.asset.json";
 
 /**
  * Fonte única dos projetos, usada pela página /projetos e pela seção de
@@ -40,6 +41,15 @@ export const projects: Project[] = [
     image: atendeIaImg,
     github: null,
     live: "https://atendimento-com-ia.netlify.app/",
+  },
+  {
+    title: "UdiPrompts",
+    description:
+      "Plataforma de prompts para criação de imagens com inteligência artificial, com biblioteca organizada por categorias, busca, favoritos e geração de imagens integrada.",
+    tech: ["IA"],
+    image: udipromptsImg.url,
+    github: null,
+    live: "https://udiprompts.com.br/",
   },
   {
     title: "Solid Acredi",
