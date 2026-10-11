@@ -20,7 +20,7 @@ const HeroSection = () => (
         <div className="hero-avatar w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
           <img
             src={heroPhoto.url}
-            alt="Eduardo Rojas, desenvolvedor frontend"
+            alt="Eduardo Rojas, desenvolvedor web"
             className="w-full h-full object-cover object-[center_35%]"
             width={512}
             height={512}
@@ -42,7 +42,7 @@ const HeroSection = () => (
       >
         Eduardo <span className="text-gradient">Rojas</span>
         <span className="block text-2xl md:text-3xl lg:text-4xl font-semibold text-muted-foreground mt-3">
-          Desenvolvedor Frontend
+          Desenvolvedor Web
         </span>
       </motion.h1>
 
