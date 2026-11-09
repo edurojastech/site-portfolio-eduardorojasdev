@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Projects from "./pages/Projects";
 import CV from "./pages/CV";
+import SocialMedia from "./pages/SocialMedia";
 import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "@/hooks/use-theme";
 import ClientOnly from "@/components/ClientOnly";
@@ -30,6 +31,7 @@ const AppShell = () => (
         <Route path="/" element={<Index />} />
         <Route path="/projetos" element={<Projects />} />
         <Route path="/cv" element={<CV />} />
+        <Route path="/social-media" element={<SocialMedia />} />
         {/* ADICIONE ROTAS CUSTOMIZADAS ACIMA DA ROTA CATCH-ALL "*"
             e registre-as também em src/lib/seo.ts e public/sitemap.xml */}
         <Route path="*" element={<NotFound />} />

@@ -30,6 +30,12 @@ export interface RouteSeo {
 
 export const ROUTES: RouteSeo[] = [
   {
+    path: "/social-media",
+    title: "Social Media | Eduardo Rojas Tech",
+    description:
+      "Portfólio de Social Media de Eduardo Rojas Tech: conteúdo, identidade visual e comunicação digital para conectar marcas e pessoas. Conheça os trabalhos e entre em contato.",
+  },
+  {
     path: "/",
     title: "Eduardo Rojas | Desenvolvedor Web, IA & Automações",
     description:
