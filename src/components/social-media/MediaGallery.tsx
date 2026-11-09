@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, ExternalLink, ImageIcon, Play } from "lucide-rea
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { compatibleEmbedUrl, hasPlayableVideo, socialClients, type SocialPublication } from "@/data/social-media";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 
 interface MediaGalleryProps {
   items: SocialPublication[];
@@ -58,7 +59,7 @@ export default function MediaGallery({ items, vertical = false, emptyLabel = "Pu
             aria-label={`Ampliar ${item.category}: ${item.description || socialClients.find((entry) => entry.id === item.clientId)?.name || "publicação"}`}
             onClick={() => setSelectedId(item.id)}
           >
-            <img src={item.thumbnail} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="w-full h-full object-contain bg-muted transition-transform duration-500 motion-safe:group-hover:scale-105" />
+            <img src={socialAssetUrl(item.thumbnail)} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="w-full h-full object-contain bg-muted transition-transform duration-500 motion-safe:group-hover:scale-105" />
             {hasPlayableVideo(item) && <span className="absolute inset-0 flex items-center justify-center"><span className="bg-background/90 rounded-full p-4 text-primary"><Play size={22} aria-hidden="true" /></span></span>}
             <span className="absolute bottom-3 left-3 rounded-md bg-background/90 px-3 py-1 text-xs text-foreground">{item.platform === "TikTok" ? "TikTok" : item.category === "Reels" && !hasPlayableVideo(item) ? "Capa de Reel" : item.category}</span>
           </Button>
@@ -74,11 +75,11 @@ export default function MediaGallery({ items, vertical = false, emptyLabel = "Pu
               </div>
               <div className="bg-muted rounded-lg overflow-hidden flex justify-center">
                 {selected.videoUrl ? (
-                  <video key={selected.id} src={selected.videoUrl} poster={selected.thumbnail} controls playsInline preload="metadata" aria-label={selected.description || `Vídeo de ${client?.name}`} className="w-full max-h-[62svh] object-contain" />
+                  <video key={selected.id} src={socialAssetUrl(selected.videoUrl)} poster={socialAssetUrl(selected.thumbnail)} controls playsInline preload="metadata" aria-label={selected.description || `Vídeo de ${client?.name}`} className="w-full max-h-[62svh] object-contain" />
                 ) : embedUrl ? (
                   <iframe key={selected.id} src={embedUrl} title={selected.description || `Vídeo de ${client?.name}`} allow="fullscreen; encrypted-media" allowFullScreen className="w-full h-[60svh] border-0" />
                 ) : (
-                  <img src={selected.thumbnail} alt={selected.description || `${selected.category} de ${client?.name}`} className="w-full max-h-[62svh] object-contain" />
+                  <img src={socialAssetUrl(selected.thumbnail)} alt={selected.description || `${selected.category} de ${client?.name}`} className="w-full max-h-[62svh] object-contain" />
                 )}
               </div>
               <div className="flex items-center justify-between gap-3 flex-wrap">
