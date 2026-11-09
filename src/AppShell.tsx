@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import { ThemeProvider } from "@/hooks/use-theme";
 import ClientOnly from "@/components/ClientOnly";
 import Seo from "@/components/Seo";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 /**
  * Árvore da aplicação sem o Router.
@@ -36,6 +37,7 @@ const AppShell = () => (
             e registre-as também em src/lib/seo.ts e public/sitemap.xml */}
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <FloatingWhatsApp />
     </TooltipProvider>
   </ThemeProvider>
 );
