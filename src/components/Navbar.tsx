@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logoEdu from "@/assets/logoEdu.svg";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Início", href: "#hero" },
@@ -9,12 +11,34 @@ const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experiência", href: "#experience" },
   { label: "Projetos", href: "/projetos" },
+  { label: "Social Media", href: "/social-media" },
   { label: "Contato", href: "#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  const renderItem = (item: (typeof navItems)[number], mobile = false) => {
+    const className = mobile
+      ? "text-muted-foreground hover:text-primary transition-colors"
+      : item.href === "#contact"
+        ? "text-sm text-foreground border border-foreground/30 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
+        : "text-sm text-muted-foreground hover:text-primary transition-colors duration-200";
+    if (item.href.startsWith("/")) {
+      return (
+        <Link to={item.href} className={className} onClick={() => setOpen(false)} aria-current={pathname === item.href ? "page" : undefined}>
+          {item.label}
+        </Link>
+      );
+    }
+    return (
+      <a href={pathname === "/" ? item.href : `/${item.href}`} className={className} onClick={() => setOpen(false)}>
+        {item.label}
+      </a>
+    );
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -34,7 +58,7 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#hero">
+        <a href={pathname === "/" ? "#hero" : "/#hero"}>
           <img
             src={logoEdu}
             alt="Eduardo Rojas"
@@ -43,31 +67,19 @@ const Navbar = () => {
         </a>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-6">
-          <ul className="flex items-center gap-8">
-            {navItems.map((item) => {
-              const isContact = item.href === "#contact";
-              return (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className={
-                      isContact
-                        ? "text-sm text-foreground border border-foreground/30 rounded-full px-4 py-1.5 hover:border-primary hover:text-primary transition-colors duration-200"
-                        : "text-sm text-muted-foreground hover:text-primary transition-colors duration-200"
-                    }
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              );
-            })}
+        <div className="hidden lg:flex items-center gap-6">
+          <ul className="flex items-center gap-6">
+            {navItems.map((item) => (
+              <li key={item.href}>{renderItem(item)}</li>
+            ))}
           </ul>
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden flex items-center gap-3">
-          <button
+        <div className="lg:hidden flex items-center gap-3">
+          <Button
+            variant="ghost"
+            size="icon"
             className="text-foreground"
             onClick={() => setOpen(!open)}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -79,7 +91,7 @@ const Navbar = () => {
             ) : (
               <Menu size={24} aria-hidden="true" />
             )}
-          </button>
+          </Button>
         </div>
       </div>
 
@@ -89,18 +101,12 @@ const Navbar = () => {
           id="menu-mobile"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
+          className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border"
         >
           <ul className="flex flex-col items-center gap-4 py-6">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </a>
+                {renderItem(item, true)}
               </li>
             ))}
           </ul>
