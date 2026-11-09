@@ -13,6 +13,22 @@ const sitemap = readFileSync(resolve(__dirname, "../../public/sitemap.xml"), "ut
 const robots = readFileSync(resolve(__dirname, "../../public/robots.txt"), "utf8");
 
 describe("configuração de SEO", () => {
+  it("cada página compartilha uma imagem própria que existe no site", () => {
+    const images = ROUTES.map((route) => route.image);
+    expect(new Set(images).size).toBe(4);
+    for (const route of ROUTES) {
+      expect(route.image?.startsWith(`${SITE_URL}/sharing-`)).toBe(true);
+      const path = route.image?.replace(`${SITE_URL}/`, "");
+      expect(path).toBeDefined();
+      const bytes = readFileSync(resolve(__dirname, "../../public", path ?? ""));
+      expect(bytes.length).toBeGreaterThan(1000);
+    }
+  });
+
+  it("Social Media usa a capa específica, inclusive com barra final", () => {
+    expect(getRouteSeo("/social-media/").image).toBe(`${SITE_URL}/sharing-social-media.jpg`);
+  });
+
   it("registra Social Media exclusivamente na URL solicitada e preserva as rotas existentes", () => {
     expect(ROUTES.map((route) => route.path).sort()).toEqual(["/", "/cv", "/projetos", "/social-media"]);
     expect(canonicalUrl(getRouteSeo("/social-media"))).toBe("https://dev.eduardorojas.com.br/social-media");
