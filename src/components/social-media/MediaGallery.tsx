@@ -49,7 +49,7 @@ export default function MediaGallery({ items, vertical = false, emptyLabel = "Pu
 
   return (
     <>
-      <div className={`grid gap-4 ${vertical ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
+      <div className={`grid gap-4 ${items.length === 1 ? "grid-cols-1" : vertical ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
         {items.map((item) => (
           <Button
             key={item.id}
@@ -58,14 +58,14 @@ export default function MediaGallery({ items, vertical = false, emptyLabel = "Pu
             aria-label={`Ampliar ${item.category}: ${item.description || socialClients.find((entry) => entry.id === item.clientId)?.name || "publicação"}`}
             onClick={() => setSelectedId(item.id)}
           >
-            <img src={item.thumbnail} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-105" />
+            <img src={item.thumbnail} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="w-full h-full object-contain bg-muted transition-transform duration-500 motion-safe:group-hover:scale-105" />
             {hasPlayableVideo(item) && <span className="absolute inset-0 flex items-center justify-center"><span className="bg-background/90 rounded-full p-4 text-primary"><Play size={22} aria-hidden="true" /></span></span>}
-            <span className="absolute bottom-3 left-3 rounded-md bg-background/90 px-3 py-1 text-xs text-foreground">{item.category}</span>
+            <span className="absolute bottom-3 left-3 rounded-md bg-background/90 px-3 py-1 text-xs text-foreground">{item.platform === "TikTok" ? "TikTok" : item.category === "Reels" && !hasPlayableVideo(item) ? "Capa de Reel" : item.category}</span>
           </Button>
         ))}
       </div>
       <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) setSelectedId(undefined); }}>
-        <DialogContent className="w-[calc(100%-2rem)] max-w-4xl max-h-[92svh] overflow-y-auto p-5 sm:p-6" onOpenAutoFocus={(event) => { event.preventDefault(); }}>
+        <DialogContent className="w-[calc(100%-2rem)] max-w-4xl max-h-[92svh] overflow-y-auto p-5 sm:p-6">
           {selected && (
             <>
               <div className="pr-7">
