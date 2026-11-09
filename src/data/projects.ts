@@ -9,6 +9,9 @@ import sitesvelozImg from "@/assets/projects/sitesveloz.webp";
 import jazzImg from "@/assets/projects/jazz.webp";
 import atendeIaImg from "@/assets/projects/atende-ia.webp";
 import udipromptsImg from "@/assets/projects/udiprompts.webp";
+import portalConvidadoAsset from "@/assets/projects/portal-do-convidado.webp.asset.json";
+import decodingAssessmentAsset from "@/assets/projects/decoding-assessment-ia.webp.asset.json";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 
 /**
  * Fonte única dos projetos, usada pela página /projetos e pela seção de
@@ -25,6 +28,24 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Portal do Convidado — Além do Escritório",
+    description:
+      "Portal do podcast Além do Escritório, com identidade visual própria, página de apresentação e acesso à área da equipe. Estrutura inicial preparada para as próximas etapas do produto.",
+    tech: [],
+    image: socialAssetUrl(portalConvidadoAsset.url),
+    github: null,
+    live: "https://portal-do-convidado.decodingp.com/",
+  },
+  {
+    title: "Decoding — Assessment de Maturidade em IA",
+    description:
+      "Plataforma de diagnóstico de maturidade em inteligência artificial para equipes, com visão individual e da organização para orientar a aprendizagem e a formação de turmas por nível.",
+    tech: [],
+    image: socialAssetUrl(decodingAssessmentAsset.url),
+    github: null,
+    live: "https://decoding-assessment-ia.replit.app/admin/login",
+  },
   {
     title: "Atende IA",
     description:
