@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppShell from "@/AppShell";
 import { getRouteSeo } from "@/lib/seo";
@@ -12,6 +12,14 @@ const renderAt = (path: string) =>
   );
 
 describe("renderização das rotas", () => {
+  it("abre Social Media pelo menu e permite voltar às seções da home", () => {
+    renderAt("/");
+    fireEvent.click(screen.getByRole("link", { name: "Social Media" }));
+    expect(screen.getByRole("link", { name: "Social Media" })).toHaveAttribute("aria-current", "page");
+    expect(screen.getByRole("link", { name: "Sobre" })).toHaveAttribute("href", "/#about");
+    expect(screen.getByRole("link", { name: "Contato" })).toHaveAttribute("href", "/#contact");
+  });
+
   it("a home monta e o H1 traz nome e função", () => {
     renderAt("/");
     const h1 = screen.getByRole("heading", { level: 1 });
@@ -86,7 +94,7 @@ describe("acessibilidade dos controles", () => {
   //
   // Usa o mesmo algoritmo de nome acessível que o Lighthouse: um link que
   // envolve <img alt="..."> É nomeado pelo alt — não basta olhar textContent.
-  it.each(["/", "/projetos", "/cv"])(
+  it.each(["/", "/projetos", "/cv", "/social-media"])(
     "todo botão e link tem nome acessível em %s",
     (path) => {
       renderAt(path);

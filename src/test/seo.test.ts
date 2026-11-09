@@ -13,6 +13,13 @@ const sitemap = readFileSync(resolve(__dirname, "../../public/sitemap.xml"), "ut
 const robots = readFileSync(resolve(__dirname, "../../public/robots.txt"), "utf8");
 
 describe("configuração de SEO", () => {
+  it("registra Social Media exclusivamente na URL solicitada e preserva as rotas existentes", () => {
+    expect(ROUTES.map((route) => route.path).sort()).toEqual(["/", "/cv", "/projetos", "/social-media"]);
+    expect(canonicalUrl(getRouteSeo("/social-media"))).toBe("https://dev.eduardorojas.com.br/social-media");
+    expect(getRouteSeo("/social-media/").path).toBe("/social-media");
+    expect(getRouteSeo("/socialmedia")).toBe(NOT_FOUND_SEO);
+  });
+
   it("toda rota indexável está no sitemap", () => {
     for (const route of ROUTES) {
       expect(sitemap, `${route.path} ausente do sitemap.xml`).toContain(
