@@ -1,4 +1,5 @@
 # Social Media
+- [ ] Replace striped sharing image with clean brand artwork and distinct thumbnails for home, projects, curriculum and Social Media; verify route-specific metadata.
 - [x] Expand only /social-media with the four Instagram brands, two TikTok profiles, AI production, formats, process, services and WhatsApp contact.
 - [x] Investigate real public media; 30 original images/thumbnails collected, no invented work or metrics.
 - [x] Add reusable media data, filtered galleries and accessible lightbox with video support; original links are available when third-party TikTok playback fails.
