@@ -11,7 +11,7 @@ interface MediaGalleryProps {
   emptyLabel?: string;
 }
 
-export default function MediaGallery({ items, vertical = false, emptyLabel = "Publicações em breve" }: MediaGalleryProps) {
+export default function MediaGallery({ items, emptyLabel = "Publicações em breve" }: MediaGalleryProps) {
   const [selectedId, setSelectedId] = useState<string>();
   const selectedIndex = items.findIndex((item) => item.id === selectedId);
   const selected = items[selectedIndex];
@@ -50,16 +50,16 @@ export default function MediaGallery({ items, vertical = false, emptyLabel = "Pu
 
   return (
     <>
-      <div className={`grid gap-4 ${items.length === 1 ? "grid-cols-1" : vertical ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}>
+      <div className={`gap-4 ${items.length === 1 ? "columns-1" : "columns-1 sm:columns-2 lg:columns-3"}`}>
         {items.map((item) => (
           <Button
             key={item.id}
             variant="ghost"
-            className={`group relative block h-auto w-full overflow-hidden rounded-lg border border-border p-0 ${vertical || item.aspect === "portrait" ? "aspect-[9/16]" : "aspect-square"}`}
+            className="group relative mb-4 block h-auto w-full break-inside-avoid overflow-hidden rounded-lg border border-border p-0"
             aria-label={`Ampliar ${item.category}: ${item.description || socialClients.find((entry) => entry.id === item.clientId)?.name || "publicação"}`}
             onClick={() => setSelectedId(item.id)}
           >
-            <img src={socialAssetUrl(item.thumbnail)} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="w-full h-full object-contain bg-muted transition-transform duration-500 motion-safe:group-hover:scale-105" />
+            <img src={socialAssetUrl(item.thumbnail)} alt={item.description || `${item.category} — ${item.clientId}`} loading="lazy" decoding="async" className="block w-full h-auto bg-muted transition-transform duration-500 motion-safe:group-hover:scale-105" />
             {hasPlayableVideo(item) && <span className="absolute inset-0 flex items-center justify-center"><span className="bg-background/90 rounded-full p-4 text-primary"><Play size={22} aria-hidden="true" /></span></span>}
             <span className="absolute bottom-3 left-3 rounded-md bg-background/90 px-3 py-1 text-xs text-foreground">{item.platform === "TikTok" ? "TikTok" : item.category === "Reels" && !hasPlayableVideo(item) ? "Capa de Reel" : item.category}</span>
           </Button>
