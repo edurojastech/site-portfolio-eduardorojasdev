@@ -57,14 +57,15 @@ const headFor = (route) => {
     `<meta property="og:type" content="${route.ogType ?? "website"}" />`,
     `<meta property="og:site_name" content="${escape(SITE_NAME)}" />`,
     `<meta property="og:locale" content="${LOCALE}" />`,
-    `<meta property="og:image" content="${OG_IMAGE}" />`,
+    `<meta property="og:image" content="${escape(route.image ?? OG_IMAGE)}" />`,
     `<meta property="og:image:width" content="1200" />`,
     `<meta property="og:image:height" content="630" />`,
-    `<meta property="og:image:alt" content="Eduardo Rojas — Desenvolvedor Web" />`,
+    `<meta property="og:image:alt" content="${escape(route.imageAlt ?? route.title)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${title}" />`,
     `<meta name="twitter:description" content="${desc}" />`,
-    `<meta name="twitter:image" content="${OG_IMAGE}" />`,
+    `<meta name="twitter:image" content="${escape(route.image ?? OG_IMAGE)}" />`,
+    `<meta name="twitter:image:alt" content="${escape(route.imageAlt ?? route.title)}" />`,
   ];
   if (route.keywords) {
     tags.splice(2, 0, `<meta name="keywords" content="${escape(route.keywords)}" />`);
