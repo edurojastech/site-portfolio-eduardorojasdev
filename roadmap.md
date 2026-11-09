@@ -1,4 +1,5 @@
 # Social Media
+- [ ] Add supplied orbital symbols subtly to home and curriculum sharing thumbnails only; preserve Projects and Social Media.
 - [x] Replace striped sharing image with clean brand artwork and distinct thumbnails for home, projects, curriculum and Social Media; verified route-specific OG/Twitter images, JPEG delivery and 27 passing tests. Live shares require deployment.
 - [x] Expand only /social-media with the four Instagram brands, two TikTok profiles, AI production, formats, process, services and WhatsApp contact.
 - [x] Investigate real public media; 30 original images/thumbnails collected, no invented work or metrics.
