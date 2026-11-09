@@ -12,6 +12,17 @@ const renderAt = (path: string) =>
   );
 
 describe("renderização das rotas", () => {
+  it.each(["/", "/projetos", "/cv", "/social-media"])(
+    "mantém o contato flutuante único com o mesmo destino em %s",
+    (path) => {
+      renderAt(path);
+      const contacts = screen.getAllByRole("link", { name: "Falar com Eduardo Rojas no WhatsApp" });
+      expect(contacts).toHaveLength(1);
+      expect(contacts[0]).toHaveAttribute("href", "https://api.whatsapp.com/send?phone=5534991157227");
+      expect(contacts[0]).toHaveAttribute("target", "_blank");
+    },
+  );
+
   it("abre Social Media pelo menu e permite voltar às seções da home", () => {
     renderAt("/");
     fireEvent.click(screen.getByRole("link", { name: "Social Media" }));
