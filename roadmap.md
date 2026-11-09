@@ -1,3 +1,7 @@
+# Projects
+- [ ] Add Portal do Convidado and Decoding Assessment IA as the two newest projects with verified screenshots and links.
+- [ ] Verify project ordering, images and grid/carousel views.
+
 # Social Media
 - [x] Add supplied orbital symbols subtly to home and curriculum sharing thumbnails only; Projects and Social Media unchanged, dimensions and 13 SEO tests verified.
 - [x] Replace striped sharing image with clean brand artwork and distinct thumbnails for home, projects, curriculum and Social Media; verified route-specific OG/Twitter images, JPEG delivery and 27 passing tests. Live shares require deployment.
