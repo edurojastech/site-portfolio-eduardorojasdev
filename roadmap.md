@@ -1,6 +1,6 @@
 # Projects
-- [ ] Add Portal do Convidado and Decoding Assessment IA as the two newest projects with verified screenshots and links.
-- [ ] Verify project ordering, images and grid/carousel views.
+- [x] Add Portal do Convidado and Decoding Assessment IA as the two newest projects with verified screenshots and links.
+- [x] Verify project ordering, images and grid/carousel views; 19 tests passed, desktop/mobile checked and build OK.
 
 # Social Media
 - [x] Add supplied orbital symbols subtly to home and curriculum sharing thumbnails only; Projects and Social Media unchanged, dimensions and 13 SEO tests verified.
