@@ -11,13 +11,16 @@
 
 export const SITE_URL = "https://dev.eduardorojas.com.br";
 export const SITE_NAME = "Eduardo Rojas";
-export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const OG_IMAGE = `${SITE_URL}/sharing-home.jpg`;
 export const LOCALE = "pt_BR";
 
 export interface RouteSeo {
   path: string;
   title: string;
   description: string;
+  /** Imagem de compartilhamento específica da página. */
+  image?: string;
+  imageAlt?: string;
   /** Palavras-chave específicas da rota. */
   keywords?: string;
   /** Caminho canônico. Padrão: o próprio `path`. */
@@ -32,12 +35,16 @@ export const ROUTES: RouteSeo[] = [
   {
     path: "/social-media",
     title: "Social Media | Eduardo Rojas Tech",
+    image: `${SITE_URL}/sharing-social-media.jpg`,
+    imageAlt: "Social Media — Eduardo Rojas Tech: posts, carrosséis, Reels e produção audiovisual com IA",
     description:
       "Social Media e produção audiovisual com IA por Eduardo Rojas Tech. Conheça trabalhos reais para Instagram e TikTok, carrosséis, Reels e gestão de presença digital.",
   },
   {
     path: "/",
     title: "Eduardo Rojas | Desenvolvedor Web, IA & Automações",
+    image: OG_IMAGE,
+    imageAlt: "Eduardo Rojas — Desenvolvedor Web, IA e Automações",
     description:
       "Desenvolvedor Web com mais de 6 anos criando aplicações web, SaaS e landing pages de alta performance. Desenvolvimento com React, Next.js, Vue e Nuxt, além de soluções com IA e automações.",
     keywords:
@@ -47,12 +54,16 @@ export const ROUTES: RouteSeo[] = [
   {
     path: "/projetos",
     title: "Projetos | Eduardo Rojas — Desenvolvedor Web",
+    image: `${SITE_URL}/sharing-projects.jpg`,
+    imageAlt: "Projetos Web — sites, plataformas e aplicações com IA por Eduardo Rojas",
     description:
       "Portfólio de projetos frontend: dashboards, plataformas, landing pages e sites institucionais desenvolvidos em React, Next.js, Vue e TypeScript.",
   },
   {
     path: "/cv",
     title: "Currículo | Eduardo Rojas — Desenvolvedor Web",
+    image: `${SITE_URL}/sharing-curriculum.jpg`,
+    imageAlt: "Currículo Eduardo Rojas — experiência, tecnologias e formação",
     description:
       "Currículo de Eduardo Rojas, desenvolvedor web com mais de 6 anos de experiência em React, Next.js, Vue, TypeScript, Node.js e Tailwind CSS.",
   },

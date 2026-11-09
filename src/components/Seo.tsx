@@ -55,7 +55,10 @@ const Seo = () => {
       "og:type",
       seo.ogType ?? "website",
     );
-    setMeta('meta[property="og:image"]', "property", "og:image", OG_IMAGE);
+    setMeta('meta[property="og:image"]', "property", "og:image", seo.image ?? OG_IMAGE);
+    setMeta('meta[property="og:image:alt"]', "property", "og:image:alt", seo.imageAlt ?? seo.title);
+    setMeta('meta[name="twitter:image"]', "name", "twitter:image", seo.image ?? OG_IMAGE);
+    setMeta('meta[name="twitter:image:alt"]', "name", "twitter:image:alt", seo.imageAlt ?? seo.title);
     setMeta(
       'meta[name="twitter:title"]',
       "name",
