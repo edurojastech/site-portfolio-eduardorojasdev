@@ -31,7 +31,7 @@ describe("Social Media portfolio rules", () => {
     expect(SOCIAL_WHATSAPP).toBe("https://api.whatsapp.com/send?phone=5534991157227");
   });
   it("all gallery entries have original publication links and a known client", () => {
-    expect(socialPublications).toHaveLength(30);
+    expect(socialPublications).toHaveLength(32);
     for (const entry of socialPublications) {
       expect(socialClients.some((client) => client.id === entry.clientId && client.platform === entry.platform)).toBe(true);
       expect(entry.originalUrl).toMatch(/^https:\/\/www\.(instagram|tiktok)\.com\//);
