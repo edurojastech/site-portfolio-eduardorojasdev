@@ -3,7 +3,7 @@ import { filterPublications, hasPlayableVideo, compatibleEmbedUrl, socialClients
 
 describe("Social Media portfolio rules", () => {
   it("preserves the four Instagram brands and two TikTok profiles supplied by Eduardo", () => {
-    expect(socialClients.filter((c) => c.platform === "Instagram").map((c) => c.username)).toEqual(["@eduardorojastech", "@asfpremoldados", "@sitesveloz", "@udiprompts"]);
+    expect(socialClients.filter((c) => c.platform === "Instagram").map((c) => c.username)).toEqual(["@zuurkenn.oficial", "@eduardorojastech", "@asfpremoldados", "@sitesveloz", "@udiprompts"]);
     expect(socialClients.filter((c) => c.platform === "TikTok").map((c) => c.username)).toEqual(["@duduprompts", "@eduardorojastech"]);
   });
   it("filters by category and client without leaking other clients' publications", () => {
@@ -31,7 +31,7 @@ describe("Social Media portfolio rules", () => {
     expect(SOCIAL_WHATSAPP).toBe("https://api.whatsapp.com/send?phone=5534991157227");
   });
   it("all gallery entries have original publication links and a known client", () => {
-    expect(socialPublications).toHaveLength(30);
+    expect(socialPublications).toHaveLength(32);
     for (const entry of socialPublications) {
       expect(socialClients.some((client) => client.id === entry.clientId && client.platform === entry.platform)).toBe(true);
       expect(entry.originalUrl).toMatch(/^https:\/\/www\.(instagram|tiktok)\.com\//);
