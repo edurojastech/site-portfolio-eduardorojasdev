@@ -28,6 +28,10 @@ import media26 from "@/assets/social-media/dudu-3.webp.asset.json";
 import media27 from "@/assets/social-media/edu-tiktok-1.webp.asset.json";
 import media28 from "@/assets/social-media/edu-tiktok-2.webp.asset.json";
 import media29 from "@/assets/social-media/edu-tiktok-3.webp.asset.json";
+import zuurkenn1 from "@/assets/social-media/zuurkenn-1.webp.asset.json";
+import zuurkenn2 from "@/assets/social-media/zuurkenn-2.webp.asset.json";
+import zuurkennLogo from "@/assets/social-media/zuurkenn-logo.webp.asset.json";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 import avatar from "@/assets/eduardo-avatar.webp";
 
 export const SOCIAL_WHATSAPP = "https://api.whatsapp.com/send?phone=5534991157227";
@@ -64,6 +68,13 @@ export interface SocialPublication {
 }
 
 export const socialClients: SocialClient[] = [
+  {
+    id: "zuurkenn", name: "ZUURKENN", username: "@zuurkenn.oficial",
+    platform: "Instagram", profileUrl: "https://www.instagram.com/zuurkenn.oficial/",
+    segment: "Tecnologia e inteligência artificial", initials: "ZK", profileImage: socialAssetUrl(zuurkennLogo.url),
+    description: "Rebranding completo com criação da nova logomarca e gestão do Instagram, com conteúdos sobre tecnologia, IA e produtividade para empresas.",
+    formats: ["Rebranding", "Logomarca", "Reels", "Posts"],
+  },
   {
     id: "eduardo-instagram", name: "Eduardo Rojas Tech", username: "@eduardorojastech",
     platform: "Instagram", profileUrl: "https://www.instagram.com/eduardorojastech/",
@@ -111,6 +122,28 @@ export const socialClients: SocialClient[] = [
 // Add verified original image/video assets here, never mock portfolio publications.
 // thumbnail is required; videoUrl is a playable file and embedUrl a supported player URL.
 export const socialPublications: SocialPublication[] = [
+{
+  "id": "zuurkenn-1",
+  "clientId": "zuurkenn",
+  "platform": "Instagram",
+  "category": "Reels",
+  "description": "Rebranding: apresentação da nova logomarca ZUURKENN",
+  "originalUrl": "https://www.instagram.com/zuurkenn.oficial/reel/DfzJRnuhiwq/",
+  "aspect": "portrait",
+  "ai": false,
+  "thumbnail": zuurkenn1.url
+},
+{
+  "id": "zuurkenn-2",
+  "clientId": "zuurkenn",
+  "platform": "Instagram",
+  "category": "Posts",
+  "description": "Sua empresa não precisa trabalhar mais, precisa trabalhar de forma mais inteligente",
+  "originalUrl": "https://www.instagram.com/zuurkenn.oficial/p/Dfz2dyGpigt/",
+  "aspect": "square",
+  "ai": false,
+  "thumbnail": zuurkenn2.url
+},
 {
   "id": "eduardo-1",
   "clientId": "eduardo-instagram",

@@ -3,7 +3,7 @@ import { filterPublications, hasPlayableVideo, compatibleEmbedUrl, socialClients
 
 describe("Social Media portfolio rules", () => {
   it("preserves the four Instagram brands and two TikTok profiles supplied by Eduardo", () => {
-    expect(socialClients.filter((c) => c.platform === "Instagram").map((c) => c.username)).toEqual(["@eduardorojastech", "@asfpremoldados", "@sitesveloz", "@udiprompts"]);
+    expect(socialClients.filter((c) => c.platform === "Instagram").map((c) => c.username)).toEqual(["@zuurkenn.oficial", "@eduardorojastech", "@asfpremoldados", "@sitesveloz", "@udiprompts"]);
     expect(socialClients.filter((c) => c.platform === "TikTok").map((c) => c.username)).toEqual(["@duduprompts", "@eduardorojastech"]);
   });
   it("filters by category and client without leaking other clients' publications", () => {
