@@ -31,6 +31,9 @@ const ProjectCard = ({ project }: { project: Project }) => (
         alt={`Print do projeto ${project.title}`}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"
+        decoding="async"
+        width={900}
+        height={563}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
     </div>
@@ -97,7 +100,7 @@ const Projects = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="mb-12"
@@ -168,7 +171,7 @@ const Projects = () => {
           </div>
         </div>
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={`${view}-${filter}`}
             initial={{ opacity: 0, y: 10 }}
@@ -181,7 +184,7 @@ const Projects = () => {
                 {filteredProjects.map((project, i) => (
                   <motion.div
                     key={project.title}
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={false}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.08 }}
                   >

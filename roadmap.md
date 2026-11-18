@@ -1,4 +1,5 @@
 # Performance
+- [x] Sweep first-content loading: remove header delays in Projects/Social Media and shared navigation, size project/profile images and reuse the smaller social avatar. CV/404 already show content immediately; galleries defer video players until opened. Read all home sections, footer, WhatsApp and prerender paths; below-fold animations remain intentional. Browser checked all pages, project carousel and gallery; 39 tests pass. External video playback and a new deployed PageSpeed score remain unverified.
 - [x] Inspect the supplied mobile PageSpeed report: 88, LCP 3.3s, avatar render delay 2.11s and blocking Google Fonts stylesheet.
 - [x] Show hero immediately, deliver fonts directly, provide smaller avatar/logo variants, split secondary routes and reduce canvas work.
 - [x] Verify 39 regression tests, successful build and desktop/mobile navigation with loaded images/fonts, no runtime errors or horizontal overflow. The new public PageSpeed score remains unmeasured until deployment.

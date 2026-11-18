@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowDown, ArrowUpRight, Instagram, Film, Sparkles, Palette, Check, MessageCircle } from "lucide-react";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Navbar from "@/components/Navbar";
@@ -9,6 +9,8 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import MediaGallery from "@/components/social-media/MediaGallery";
 import { socialClients, socialPublications, socialCategories, filterPublications, SOCIAL_WHATSAPP, type SocialCategory, type SocialClient } from "@/data/social-media";
 import avatar from "@/assets/eduardo-avatar.webp";
+import smallAvatar from "@/assets/optimized/eduardo-avatar-256.webp.asset.json";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 
 const process = [
   ["Planejamento", "Entendimento da marca, público, posicionamento e objetivos."],
@@ -27,14 +29,13 @@ const formats = [
 function ClientIdentity({ client }: { client: SocialClient }) {
   return (
     <div className="flex items-center gap-4 min-w-0">
-      {client.profileImage ? <img src={client.profileImage} alt={client.name} loading="lazy" className="w-14 h-14 rounded-full object-cover shrink-0 ring-1 ring-border" /> : <span className="w-14 h-14 shrink-0 rounded-full border border-border flex items-center justify-center font-bold text-primary bg-secondary" aria-hidden="true">{client.initials}</span>}
+      {client.profileImage ? <img src={client.profileImage} alt={client.name} loading="lazy" decoding="async" width={56} height={56} className="w-14 h-14 rounded-full object-cover shrink-0 ring-1 ring-border" /> : <span className="w-14 h-14 shrink-0 rounded-full border border-border flex items-center justify-center font-bold text-primary bg-secondary" aria-hidden="true">{client.initials}</span>}
       <div className="min-w-0"><h3 className="text-xl sm:text-2xl font-semibold">{client.name}</h3><p className="text-sm text-primary break-words">{client.username}</p></div>
     </div>
   );
 }
 
 const SocialMedia = () => {
-  const reducedMotion = useReducedMotion();
   const [category, setCategory] = useState<SocialCategory>("Todos");
   const instagram = socialClients.filter((client) => client.platform === "Instagram");
   const tiktok = socialClients.filter((client) => client.platform === "TikTok");
@@ -46,8 +47,8 @@ const SocialMedia = () => {
       <Navbar />
       <main className="relative z-10">
         <header className="max-w-6xl mx-auto px-6 pt-32 lg:pt-36 pb-12">
-          <motion.div initial={reducedMotion ? false : { opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <div className="flex items-center gap-3 mb-7"><img src={avatar} alt="Eduardo Rojas" width={44} height={44} className="w-11 h-11 rounded-full object-cover ring-1 ring-primary/40" /><p className="text-sm font-medium">Eduardo Rojas Tech <span className="text-muted-foreground block">Conteúdo · Design · Audiovisual</span></p></div>
+          <motion.div initial={false}>
+            <div className="flex items-center gap-3 mb-7"><img src={socialAssetUrl(smallAvatar.url)} srcSet={`${socialAssetUrl(smallAvatar.url)} 256w, ${avatar} 512w`} sizes="44px" alt="Eduardo Rojas" width={44} height={44} decoding="async" className="w-11 h-11 rounded-full object-cover ring-1 ring-primary/40" /><p className="text-sm font-medium">Eduardo Rojas Tech <span className="text-muted-foreground block">Conteúdo · Design · Audiovisual</span></p></div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">Social <span className="text-primary">Media</span></h1>
             <p className="text-xl sm:text-2xl mt-4 font-medium">Marcas reais. Conteúdo com identidade.</p>
             <p className="text-muted-foreground mt-4 leading-relaxed max-w-2xl">Criação de conteúdo para Instagram e TikTok, peças visuais e produção audiovisual com inteligência artificial. Do planejamento à presença digital da sua marca.</p>
