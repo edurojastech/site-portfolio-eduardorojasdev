@@ -1,4 +1,6 @@
 # Architecture
+- Keep secondary routes lazy in the browser but supply their eager components to AppShell during prerender; this reduces home downloads without losing static page content.
+- Keep first-viewport hero content visible without entrance opacity animations and deliver fonts directly with swap; delaying LCP for decorative effects hurts mobile performance.
 - Keep project ordering and content in the shared typed projects data module; resolve new CDN screenshots through the existing asset-origin helper so external deployments load them too.
 - Render the floating WhatsApp contact once in AppShell outside Routes so every page shares the same contact without duplicates.
 - Define each page's sharing image in the shared SEO registry and consume it in both runtime and prerender metadata so direct shares match the page context.

@@ -1,6 +1,10 @@
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import AppShell from "./AppShell";
+import Projects from "./pages/Projects";
+import CV from "./pages/CV";
+import SocialMedia from "./pages/SocialMedia";
+import NotFound from "./pages/NotFound";
 import "./index.css";
 
 /**
@@ -10,7 +14,7 @@ import "./index.css";
 export function render(url: string): string {
   return renderToString(
     <StaticRouter location={url}>
-      <AppShell />
+      <AppShell pages={{ Projects, CV, SocialMedia, NotFound }} />
     </StaticRouter>,
   );
 }

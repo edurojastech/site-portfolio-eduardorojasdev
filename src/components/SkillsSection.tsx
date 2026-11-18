@@ -1,7 +1,8 @@
 import { motion, useInView } from "framer-motion";
 import piniLogo from "../assets/pinia.svg";
-import claudeAsset from "@/assets/claude-ia.webp";
-import chatgptAsset from "@/assets/chatgpt-logo.webp";
+import claudeAsset from "@/assets/optimized/claude-96.webp.asset.json";
+import chatgptAsset from "@/assets/optimized/chatgpt-96.webp.asset.json";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 import { useRef } from "react";
 import {
   Carousel,
@@ -91,7 +92,7 @@ const skills = [
   },
   {
     name: "ChatGPT",
-    logo: chatgptAsset,
+    logo: socialAssetUrl(chatgptAsset.url),
   },
   {
     name: "GitHub Copilot",
@@ -99,7 +100,7 @@ const skills = [
   },
   {
     name: "Claude AI",
-    logo: claudeAsset,
+    logo: socialAssetUrl(claudeAsset.url),
   },
   {
     name: "Cursor",
@@ -131,6 +132,9 @@ const SkillLogo = ({
         alt={skill.name}
         className="w-full h-full object-contain drop-shadow-lg transition duration-300 [.light_&]:brightness-0 [.light_&]:invert"
         loading="lazy"
+        decoding="async"
+        width={96}
+        height={96}
       />
     </div>
     <span className="w-full text-center text-xs md:text-sm font-mono-code text-muted-foreground group-hover:text-primary transition-colors duration-300 [.light_&]:text-white [.light_&]:group-hover:text-white">

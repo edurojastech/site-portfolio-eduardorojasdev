@@ -2,12 +2,16 @@ import { describe, it, expect } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppShell from "@/AppShell";
+import Projects from "@/pages/Projects";
+import CV from "@/pages/CV";
+import SocialMedia from "@/pages/SocialMedia";
+import NotFound from "@/pages/NotFound";
 import { getRouteSeo } from "@/lib/seo";
 
 const renderAt = (path: string) =>
   render(
     <MemoryRouter initialEntries={[path]}>
-      <AppShell />
+      <AppShell pages={{ Projects, CV, SocialMedia, NotFound }} />
     </MemoryRouter>,
   );
 

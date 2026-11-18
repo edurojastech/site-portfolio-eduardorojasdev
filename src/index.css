@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('https://id-preview--45ee9bf9-ab3d-4867-a5d0-ad2cc7d1315f.lovable.app/__l5e/assets-v1/b460dc5e-baba-4e16-8e30-e0ef4a2ddfa1/exo-2-latin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://id-preview--45ee9bf9-ab3d-4867-a5d0-ad2cc7d1315f.lovable.app/__l5e/assets-v1/f54b55c4-8966-46f5-afe4-acafa3930d75/jetbrains-mono-latin.woff2') format('woff2');
+}
 
 @tailwind base;
 @tailwind components;
@@ -36,6 +50,7 @@
     --ring: 166 85% 32%;
 
     --radius: 0.75rem;
+    --canvas-accent: 12, 168, 142;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 214 45% 10%;

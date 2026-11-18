@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { ArrowDown, Eye, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroPhoto from "@/assets/eduardo-avatar.webp";
+import smallAvatar from "@/assets/optimized/eduardo-avatar-256.webp.asset.json";
+import { socialAssetUrl } from "@/lib/social-media-assets";
 
 const CV_URL = "/cv";
 
@@ -12,14 +14,14 @@ const HeroSection = () => (
   >
     <div className="hero-content max-w-4xl mx-auto text-center relative z-10">
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
+        initial={false}
         className="hero-intro mb-6 flex flex-col items-center gap-4"
       >
         <div className="hero-avatar w-[200px] h-[200px] md:w-64 md:h-64 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-lg shadow-primary/20">
           <img
             src={heroPhoto}
+            srcSet={`${socialAssetUrl(smallAvatar.url)} 256w, ${heroPhoto} 512w`}
+            sizes="(min-width: 768px) 256px, 200px"
             alt="Eduardo Rojas, desenvolvedor web"
             className="w-full h-full object-cover"
             width={512}
@@ -35,9 +37,7 @@ const HeroSection = () => (
       </motion.div>
 
       <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        initial={false}
         className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-4 leading-tight"
       >
         Eduardo <span className="text-gradient">Rojas</span>
@@ -47,9 +47,7 @@ const HeroSection = () => (
       </motion.h1>
 
       <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+        initial={false}
         className="hero-description text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
       >
         Mais de 6 anos criando sites, landing pages e aplicações web
@@ -58,9 +56,7 @@ const HeroSection = () => (
       </motion.p>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
+        initial={false}
         className="hero-actions flex items-center justify-center gap-4 mb-12"
       >
         <Button size="lg" className="glow-primary font-semibold" asChild>
@@ -74,9 +70,7 @@ const HeroSection = () => (
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
+        initial={false}
         className="hero-socials flex items-center justify-center gap-6"
       >
         {[

@@ -26,9 +26,9 @@ export default defineConfig(({ mode }) => ({
         manualChunks(id) {
           if (!id.includes("node_modules")) return;
           if (/[\\/]node_modules[\\/](react|react-dom|scheduler)[\\/]/.test(id)) return "react";
-          if (id.includes("framer-motion")) return "motion";
-          if (id.includes("@radix-ui")) return "radix";
-          return "vendor";
+          if (/\/(framer-motion|motion-dom|motion-utils)\//.test(id)) return "motion";
+          // Let Vite split route-only controls naturally instead of pulling
+          // every third-party dependency into a shared initial vendor bundle.
         },
       },
     },

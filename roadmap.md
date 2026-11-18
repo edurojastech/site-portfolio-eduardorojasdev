@@ -1,3 +1,8 @@
+# Performance
+- [x] Inspect the supplied mobile PageSpeed report: 88, LCP 3.3s, avatar render delay 2.11s and blocking Google Fonts stylesheet.
+- [x] Show hero immediately, deliver fonts directly, provide smaller avatar/logo variants, split secondary routes and reduce canvas work.
+- [x] Verify 39 regression tests, successful build and desktop/mobile navigation with loaded images/fonts, no runtime errors or horizontal overflow. The new public PageSpeed score remains unmeasured until deployment.
+
 # Projects
 - [x] Add Portal do Convidado and Decoding Assessment IA as the two newest projects with verified screenshots and links.
 - [x] Verify project ordering, images and grid/carousel views; 19 tests passed, desktop/mobile checked and build OK.
